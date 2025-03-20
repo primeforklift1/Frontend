@@ -27,51 +27,52 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item mx-3 active">
-                    <a class="nav-link text-white"" href=" #" style="font-color:white;">Beranda <span
+                    <a class="nav-link text-white" href="<?= base_url()?>" style="font-color:white;">Beranda <span
                             class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item mx-3">
-                    <a class="nav-link text-white"" href=" #">Tentang Kami <span class="sr-only"></span></a>
+                    <a class="nav-link text-white" href="<?= base_url()?>tentang-kami">Tentang Kami <span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item mx-3 dropdown">
-                    <a class="nav-link dropdown-toggle text-white"" href=" #" role="button" data-toggle="dropdown"
+                    <a class="nav-link dropdown-toggle text-white" href=" #" role="button" data-toggle="dropdown"
                         aria-expanded="false">
                         Produk
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Sparepart</a>
-                        <a class="dropdown-item" href="#">Unit Forklift</a>
-                        <a class="dropdown-item" href="#">Ban Forklift</a>
-                        <a class="dropdown-item" href="#">Battery</a>
-                        <a class="dropdown-item" href="#">Attachment</a>
+                        <a class="dropdown-item" href="<?= base_url()?>produk">Semua Produk</a>
+                        <a class="dropdown-item" href="<?= base_url()?>sparepart">Sparepart</a>
+                        <a class="dropdown-item" href="<?= base_url()?>forklift">Unit Forklift</a>
+                        <a class="dropdown-item" href="<?= base_url()?>ban">Ban Forklift</a>
+                        <a class="dropdown-item" href="<?= base_url()?>battery">Battery</a>
+                        <a class="dropdown-item" href="<?= base_url()?>attachement">Attachment</a>
                     </div>
                 </li>
                 <li class="nav-item mx-3 dropdown">
-                    <a class="nav-link dropdown-toggle text-white"" href=" #" role="button" data-toggle="dropdown"
+                    <a class="nav-link dropdown-toggle text-white" href=" #" role="button" data-toggle="dropdown"
                         aria-expanded="false">
                         Layanan
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Rental Forklift</a>
-                        <a class="dropdown-item" href="#">Service</a>
+                        <a class="dropdown-item" href="<?= base_url()?>rental">Rental Forklift</a>
+                        <a class="dropdown-item" href="<?= base_url()?>service">Service</a>
                     </div>
                 </li>
                 <li class="nav-item mx-3">
-                    <a class="nav-link text-white"" href=" #">Blog <span class="sr-only"></span></a>
+                    <a class="nav-link text-white" href="<?= base_url()?>blog">Blog <span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item mx-3">
                     <button type="button" class="btn btn-primary rounded-pill">Hubungi Kami</button>
                 </li>
                 <li class="nav-item mx-3 dropdown">
-                    <a class="nav-link dropdown-toggle text-white"" href=" #" role="button" data-toggle="dropdown"
+                    <a class="nav-link dropdown-toggle text-white" href=" #" role="button" data-toggle="dropdown"
                         aria-expanded="false">
                         Bahasa
                     </a>
                     <div class="dropdown-menu" style="background-color: rgba(255, 255, 255, 0);">
-                        <a class="dropdown-item" href="#"><img src="<?= base_url()?>img/id.png" alt=""></a>
-                        <a class="dropdown-item" href="#"><img src="<?= base_url()?>img/cn.png" alt=""></a>
-                        <a class="dropdown-item" href="#"><img src="<?= base_url()?>img/jp.png" alt=""></a>
-                        <a class="dropdown-item" href="#"><img src="<?= base_url()?>img/gn.png" alt=""></a>
+                        <a class="dropdown-item" href="<?= base_url()?>id/"><img src="<?= base_url()?>img/id.png" alt=""></a>
+                        <a class="dropdown-item" href="<?= base_url()?>cn/"><img src="<?= base_url()?>img/cn.png" alt=""></a>
+                        <a class="dropdown-item" href="<?= base_url()?>jp/"><img src="<?= base_url()?>img/jp.png" alt=""></a>
+                        <a class="dropdown-item" href="<?= base_url()?>gn/"><img src="<?= base_url()?>img/gn.png" alt=""></a>
                     </div>
                 </li>
             </ul>

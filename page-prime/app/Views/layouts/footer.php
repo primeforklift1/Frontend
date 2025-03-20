@@ -12,9 +12,9 @@
 
                 <div class="text-wrapper-29">Marketplace</div>
                 <div style="margin-left:-15px;">
-                    <img class="image-7" width="60" src="img/image-23.png" />
-                    <img class="image-8" style="margin-left:-10px;" width="40" src="img/image-24.png" />
-                    <img class="image-8" width="40" src="img/image-25.png" />
+                    <img class="image-7" width="60" src="<?= base_url() ?>img/image-23.png" />
+                    <img class="image-8" style="margin-left:-10px;" width="40" src="<?= base_url() ?>img/image-24.png" />
+                    <img class="image-8" width="40" src="<?= base_url() ?>img/image-25.png" />
                 </div>
             </div>
             <div class="col-sm-3">
@@ -47,7 +47,7 @@
                     </div>
                     <div class="text-wrapper-33" style="margin-top:10px;"><img
                             src="<?= base_url() ?>img/location-dot-solid.svg" alt="" width="15">&nbsp Jl.Raya Kosambi 1
-                        No.18 F Karawang, <br />&nbsp&nbsp&nbsp&nbsp Jawa Barat, Indonesia</div>
+                        No.18 F<br />&nbsp&nbsp&nbsp&nbsp Karawang, Jawa Barat, Indonesia</div>
                     <div class="text-wrapper-33" style="margin-top:10px;"><img src="<?= base_url() ?>img/clock-solid.svg"
                             alt="" width="15">&nbsp Senin - Jumat : 07:30 - 16:30<br />&nbsp&nbsp&nbsp&nbsp Sabtu :
                         07:30 - 12:00</div>
