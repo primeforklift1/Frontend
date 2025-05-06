@@ -53,6 +53,7 @@
                         Layanan
                     </a>
                     <div class="dropdown-menu">
+                        <a class="dropdown-item" href="<?= base_url() ?>layanan">Semua Layanan</a>
                         <a class="dropdown-item" href="<?= base_url()?>rental">Rental Forklift</a>
                         <a class="dropdown-item" href="<?= base_url()?>service">Service</a>
                     </div>

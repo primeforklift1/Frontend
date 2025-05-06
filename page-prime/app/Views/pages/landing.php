@@ -1,19 +1,52 @@
 <?= $this->extend('layouts/main') ?>
 
 <?= $this->section('content') ?>
-<img class="plant-production"
-    src="<?= base_url() ?>img/plant-production-cars-modern-automotive-industry-electric-car-factory-conveyor.png"
-    height="739" style="align-items: center;" />
-<p class="solusi-terbaik-untuk">
-    Solusi Terbaik untuk Forklift Anda<br />Prime Forklift Services adalah mitra terpercaya Anda dalam
-    menyediakan forklift berkualitas, layanan sewa fleksibel, dan suku cadang asli terbaik. Kami hadir untuk
-    memastikan kebutuhan bisnis Anda terpenuhi dengan layanan profesional, cepat, dan andal.
-</p>
-<p class="selamat-datang-di">SELAMAT DATANG DI PRIME&nbsp;&nbsp;FORKLIFT SERVICES</p>
-<div class="rectangle-2"></div>
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item position-relative active">
+        <img class="d-block h-100"
+            src="<?= base_url() ?>img/plant-production-cars-modern-automotive-industry-electric-car-factory-conveyor.png"
+             style="align-items: center;" />
+        <div class="dark-overlay position-absolute w-100 h-100"></div>
+        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+            <p class="selamat-datang-di text-white">
+            SELAMAT DATANG DI PRIME FORKLIFT SERVICES
+            </p>
+            <p class="solusi-terbaik-untuk text-white">
+            Solusi Terbaik untuk Forklift Anda<br />
+            Prime Forklift Services adalah mitra terpercaya Anda dalam menyediakan forklift berkualitas, layanan sewa fleksibel, dan suku cadang asli terbaik.
+            </p>
+        </div>
+    </div>
+    <div class="carousel-item position-relative">
+        <img class="d-block h-100"
+            src="<?= base_url() ?>img/plant-production-cars-modern-automotive-industry-electric-car-factory-conveyor.png"
+             style="align-items: center;" />
+        <div class="dark-overlay position-absolute w-100 h-100"></div>
+        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+            <p class="selamat-datang-di text-white">
+            SELAMAT DATANG DI PRIME2 FORKLIFT SERVICES
+            </p>
+            <p class="solusi-terbaik-untuk text-white">
+            Solusi Terbaik untuk Forklift Anda<br />
+            Prime Forklift Services adalah mitra terpercaya Anda dalam menyediakan forklift berkualitas, layanan sewa fleksibel, dan suku cadang asli terbaik.
+            </p>
+        </div>
+    </div>
+   </div>
+
+   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Sebelumnya</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Selanjutnya</span>
+  </a>
+</div>
 <div class="isi-konten">
     <div class="about">About Us</div>
-    <div class="row" style="margin-left:70px;">
+    <div class="row">
         <div class="col-md-6">
             <h4>PT PRIME FORKLIFT SERVICES</h4>
             <p style="text-align:justify;">IT'S PRIME SERVICES
@@ -24,25 +57,18 @@
                 "Menjadi rekan TERPERCAYA dalam penangan barang" / "To be A TRUSTED partner in material handling"
                 Kami juga dipercaya sebagai Authorized Dealer dari Forklift merk Komatsu, Mitsubishi dan Nichiyu.</p>
         </div>
-        <div class="col-md-6">
-            <div class="box">
-                <div class="rectangle">
-                    <div class="image"><img class="JGBHGYHG" src="<?= base_url() ?>img/JGBHGYHG-1.png" /></div>
-                    <div class="image"><img class="pngwing-com" src="<?= base_url() ?>img/pngwing-com-10-6.png" /></div>
-                </div>
-            </div>
+        <div class="col-md-6" style="text-align: center;">
+            <img width="60%" src="<?= base_url() ?>img/about-img.png" />
         </div>
     </div>
-    <div style="margin-top:200px;">
+    <div style="margin-top:60px;">
         <div class="rectangle-7"></div>
         <img class="pngwing-com-4" width="100%" src="<?= base_url() ?>img/image-3.png" />
     </div>
 
-    <div class="row" style="margin-left:70px;margin-top:130px;">
-        <div class="col-md-6 gmb">
-            <div class="image"><img class="satu" src="<?= base_url() ?>img/pngwing-com-10-7.png" /></div>
-            <div class="image"><img class="dua" src="<?= base_url() ?>img/pngegg-7-1.png" /></div>
-            <div class="image"><img class="tiga" src="<?= base_url() ?>img/JGBHGYHG-5.png" /></div>
+    <div class="row" style="margin-top:60px;">
+        <div class="col-md-6" style="text-align: center;">
+            <img width="80%" src="<?= base_url() ?>img/why-img.png" />
         </div>
         <div class="col-md-6">
             <span class="why">Kenapa Harus Pilih Kami?</span>
@@ -87,7 +113,7 @@
         </div>
     </div>
 
-    <div class="row" style="margin-left:70px;margin-top:130px;">
+    <div class="row" style="margin-top:60px;">
         <div class="col-md-4" style="text-align:center;margin-top:70px;">
             <img class="rent" width="90%" src="<?= base_url() ?>img/pngwing-com-10-5.png" />
         </div>
@@ -108,7 +134,7 @@
         </div>
     </div>
 
-    <div class="row" style="margin-left:10px;margin-top:130px;">
+    <div class="row" style="margin-top:60px;">
         <div class="col-md-3">
             <div class="carding">
                 <div class="carding-img">
@@ -151,11 +177,11 @@
         </div>
     </div>
 
-    <div style="text-align:center;margin-top:100px;">
+    <div style="text-align:center;margin-top:60px;">
         <span class="why">Layanan Service</span>
     </div>
-    <div class="row" style="margin-left:10px;margin-top:30px;">
-        <div class="col-md-3">
+    <div class="row" style="margin-top:30px;">
+        <div class="col-md-3 cards">
             <div class="carding">
                 <div class="carding-img-ico">
                     <img style="width:100px;" src="<?= base_url() ?>img/helmet-safety-solid.svg" alt="...">
@@ -165,7 +191,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 cards">
             <div class="carding">
                 <div class="carding-img-ico">
                     <img style="width:100px;" src="<?= base_url() ?>img/gear-solid-white.svg" alt="...">
@@ -175,7 +201,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 cards">
             <div class="carding">
                 <div class="carding-img-ico">
                     <img style="width:100px;" src="<?= base_url() ?>img/Automation.png" alt="...">
@@ -185,7 +211,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 cards">
             <div class="carding">
                 <div class="carding-img-ico">
                     <img style="width:100px;" src="<?= base_url() ?>img/Engine.png" alt="...">
@@ -197,13 +223,13 @@
         </div>
     </div>
 
-    <div style="text-align:center;margin-top:100px;">
+    <div style="text-align:center;margin-top:60px;">
         <span class="why">Blog</span>
     </div>
-    <div class="row" style="margin-left:10px;margin-top:30px;">
-        <div class="col-md-3">
+    <div class="row" style="margin-top:30px;">
+        <div class="col-md-3 cards">
             <a href="<?= base_url()?>blog/data" class="sampleClick">
-                <div class="card" style="width: 18rem;">
+                <div class="card">
                     <img src="https://www.primeforklift.co.id/assets/uploads/images/thumbs/221124095818.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -212,9 +238,9 @@
                 </div>
             </a>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 cards">
             <a href="<?= base_url()?>blog/data" class="sampleClick">
-                <div class="card" style="width: 18rem;">
+                <div class="card">
                     <img src="https://www.primeforklift.co.id/assets/uploads/images/thumbs/221124095818.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -223,9 +249,9 @@
                 </div>
             </a>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 cards">
             <a href="<?= base_url()?>blog/data" class="sampleClick">
-                <div class="card" style="width: 18rem;">
+                <div class="card">
                     <img src="https://www.primeforklift.co.id/assets/uploads/images/thumbs/221124095818.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -234,9 +260,9 @@
                 </div>
             </a>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 cards">
             <a href="<?= base_url()?>blog/data" class="sampleClick">
-                <div class="card" style="width: 18rem;">
+                <div class="card">
                     <img src="https://www.primeforklift.co.id/assets/uploads/images/thumbs/221124095818.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -247,7 +273,7 @@
         </div>
     </div>
 
-    <div style="text-align:center;margin-top:100px;margin-bottom:130px;">
+    <div style="text-align:center;margin-top:60px;">
         <span class="why">Client</span>
         <img class="pngwing-com-4" width="100%" src="<?= base_url() ?>img/image-3.png" />
     </div>

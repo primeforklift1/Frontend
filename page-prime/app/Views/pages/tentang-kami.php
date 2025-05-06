@@ -3,7 +3,7 @@
 <?= $this->section('content') ?>
 <div class="isi-konten">
     <div class="about">About Us</div>
-    <div class="row" style="margin-left:70px;">
+    <div class="row">
         <div class="col-md-6">
             <h4>PT PRIME FORKLIFT SERVICES</h4>
             <p style="text-align:justify;">IT'S PRIME SERVICES
@@ -14,18 +14,13 @@
                 "Menjadi rekan TERPERCAYA dalam penangan barang" / "To be A TRUSTED partner in material handling"
                 Kami juga dipercaya sebagai Authorized Dealer dari Forklift merk Komatsu, Mitsubishi dan Nichiyu.</p>
         </div>
-        <div class="col-md-6">
-            <div class="box">
-                <div class="rectangle">
-                    <div class="image"><img class="JGBHGYHG" src="<?= base_url() ?>img/JGBHGYHG-1.png" /></div>
-                    <div class="image"><img class="pngwing-com" src="<?= base_url() ?>img/pngwing-com-10-6.png" /></div>
-                </div>
-            </div>
+        <div class="col-md-6" style="text-align: center;">
+            <img width="60%" src="<?= base_url() ?>img/about-img.png" />
         </div>
     </div>
 
     <div class="about">Visi</div>
-    <div class="row" style="margin-left:70px;">
+    <div class="row">
         <div class="col-md-6">
             <p style="text-align:justify;">Menjadi mitra terpercaya dalam penanganan barang, dengan menyediakan solusi
                 alat angkut (material handling equipment) terbaik untuk mendukung efisiensi dan produktivitas pelanggan.
@@ -40,7 +35,7 @@
     </div>
 
     <div class="about">Misi</div>
-    <div class="row" style="margin-left:70px;">
+    <div class="row">
         <div class="col-md-6">
             <p style="text-align:justify;">Menyediakan pelayanan prima yang responsif dan solusif untuk memnuhi
                 kebutuhan pelanggan.</p>

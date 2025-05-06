@@ -36,9 +36,21 @@ class Home extends BaseController
     {
         return view('pages/tentang-kami');
     }
+    public function layanan(): string
+    {
+        return view('pages/layanan');
+    }
+    public function rental(): string
+    {
+        return view('pages/rental');
+    }
+    public function service(): string
+    {
+        return view('pages/service');
+    }
     public function blog(): string
     {
-        return view('pages/tentang-kami');
+        return view('pages/blog');
     }
     public function setLanguage($id): string
     {
