@@ -13,6 +13,7 @@ $routes->get('/forklift', 'Home::forklift');
 $routes->get('/ban', 'Home::ban');
 $routes->get('/battery', 'Home::battery');
 $routes->get('/attachment', 'Home::attachment');
+$routes->get('/layanan', 'Home::layanan');
 $routes->get('/rental', 'Home::rental');
 $routes->get('/service', 'Home::service');
 $routes->get('/blog', 'Home::blog');
