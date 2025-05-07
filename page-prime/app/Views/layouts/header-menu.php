@@ -16,6 +16,15 @@
 
 
     <title>Prime Forklift</title>
+    <script>
+        const baseUrl = '<?php echo base_url(); ?>';
+        const apiURL = "<?php echo getenv('NODE_API_URL'); ?>";
+
+        function setlanguages(lang){
+        console.log("saat ini dalam bahasa "+lang);
+        sessionStorage.setItem("language", lang);
+    }
+    </script>
 </head>
 
 <body>
@@ -69,20 +78,11 @@
                     <button type="button" class="btn btn-primary rounded-pill">Hubungi Kami</button>
                 </li>
                 <li class="nav-item mx-3 dropdown">
-                    <a class="nav-link dropdown-toggle" href=" #" style="color:#0072ff !important;" role="button"
+                    <a  id="langName" class="nav-link dropdown-toggle" href=" #" style="color:#0072ff !important;" role="button"
                         data-toggle="dropdown" aria-expanded="false">
                         Bahasa
                     </a>
-                    <div class="dropdown-menu" style="background-color: rgba(255, 255, 255, 0);">
-                        <a class="dropdown-item" href="<?= base_url() ?>id/"><img src="<?= base_url() ?>img/id.png"
-                                alt=""></a>
-                        <a class="dropdown-item" href="<?= base_url() ?>cn/"><img src="<?= base_url() ?>img/cn.png"
-                                alt=""></a>
-                        <a class="dropdown-item" href="<?= base_url() ?>jp/"><img src="<?= base_url() ?>img/jp.png"
-                                alt=""></a>
-                        <a class="dropdown-item" href="<?= base_url() ?>gn/"><img src="<?= base_url() ?>img/gn.png"
-                                alt=""></a>
-                    </div>
+                    <div id="optionLang" class="dropdown-menu" style="background-color: rgba(255, 255, 255, 0); border:none;"></div>
                 </li>
             </ul>
         </div>
