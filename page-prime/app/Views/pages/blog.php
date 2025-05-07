@@ -50,7 +50,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div style="margin-top: 5px;" class="row">
             <div class="col-md-6"></div>
             <div class="col-md-6">
                 <nav aria-label=" Page navigation example">

@@ -25,8 +25,7 @@
         </div>
         <div>
             <div class="row">
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
+                <div style="cursor:pointer;" class="col-md-3" data-toggle="modal" data-target="#produkModal" onclick="setModal()">
                         <div class="carding">
                             <div class="carding-img">
                                 <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
@@ -35,95 +34,7 @@
                                 <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
                             </div>
                         </div>
-                    </a>
                 </div>
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
-                        <div class="carding">
-                            <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                            </div>
-                            <div class="carding-title" style="text-align:center;">
-                                <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
-                        <div class="carding">
-                            <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                            </div>
-                            <div class="carding-title" style="text-align:center;">
-                                <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
-                        <div class="carding">
-                            <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                            </div>
-                            <div class="carding-title" style="text-align:center;">
-                                <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
-                        <div class="carding">
-                            <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                            </div>
-                            <div class="carding-title" style="text-align:center;">
-                                <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
-                        <div class="carding">
-                            <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                            </div>
-                            <div class="carding-title" style="text-align:center;">
-                                <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
-                        <div class="carding">
-                            <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                            </div>
-                            <div class="carding-title" style="text-align:center;">
-                                <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
-                        <div class="carding">
-                            <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                            </div>
-                            <div class="carding-title" style="text-align:center;">
-                                <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
         </div>
         <div class="row">
             <div class="col-md-6"></div>
@@ -155,8 +66,7 @@
         </div>
         <div>
             <div class="row">
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
+                <div style="cursor:pointer;" class="col-md-3" data-toggle="modal" data-target="#sparepartModal" onclick="setModal()">
                         <div class="carding">
                             <div class="carding-img">
                                 <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
@@ -165,99 +75,12 @@
                                 <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
                             </div>
                         </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
-                        <div class="carding">
-                            <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                            </div>
-                            <div class="carding-title" style="text-align:center;">
-                                <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
-                        <div class="carding">
-                            <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                            </div>
-                            <div class="carding-title" style="text-align:center;">
-                                <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
-                        <div class="carding">
-                            <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                            </div>
-                            <div class="carding-title" style="text-align:center;">
-                                <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
-                        <div class="carding">
-                            <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                            </div>
-                            <div class="carding-title" style="text-align:center;">
-                                <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
-                        <div class="carding">
-                            <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                            </div>
-                            <div class="carding-title" style="text-align:center;">
-                                <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
-                        <div class="carding">
-                            <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                            </div>
-                            <div class="carding-title" style="text-align:center;">
-                                <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
-                        <div class="carding">
-                            <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                            </div>
-                            <div class="carding-title" style="text-align:center;">
-                                <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
-                            </div>
-                        </div>
-                    </a>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6"></div>
-            <div class="col-md-6"">
+            <div class="col-md-6">
                 <nav aria-label=" Page navigation example">
                 <ul class="pagination pagination-sm justify-content-end">
                     <li class="page-item"><a class="page-link" href="#">Prev</a></li>
@@ -285,8 +108,7 @@
         </div>
         <div>
             <div class="row">
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
+                <div style="cursor:pointer;" class="col-md-3" data-toggle="modal" data-target="#sparepartModal" onclick="setModal()">
                         <div class="carding">
                             <div class="carding-img">
                                 <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
@@ -295,99 +117,12 @@
                                 <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
                             </div>
                         </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
-                        <div class="carding">
-                            <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                            </div>
-                            <div class="carding-title" style="text-align:center;">
-                                <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
-                        <div class="carding">
-                            <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                            </div>
-                            <div class="carding-title" style="text-align:center;">
-                                <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
-                        <div class="carding">
-                            <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                            </div>
-                            <div class="carding-title" style="text-align:center;">
-                                <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
-                        <div class="carding">
-                            <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                            </div>
-                            <div class="carding-title" style="text-align:center;">
-                                <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
-                        <div class="carding">
-                            <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                            </div>
-                            <div class="carding-title" style="text-align:center;">
-                                <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
-                        <div class="carding">
-                            <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                            </div>
-                            <div class="carding-title" style="text-align:center;">
-                                <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
-                        <div class="carding">
-                            <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                            </div>
-                            <div class="carding-title" style="text-align:center;">
-                                <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
-                            </div>
-                        </div>
-                    </a>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6"></div>
-            <div class="col-md-6"">
+            <div class="col-md-6">
                 <nav aria-label=" Page navigation example">
                 <ul class="pagination pagination-sm justify-content-end">
                     <li class="page-item"><a class="page-link" href="#">Prev</a></li>
@@ -415,8 +150,7 @@
         </div>
         <div>
             <div class="row">
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
+                <div style="cursor:pointer;" class="col-md-3" data-toggle="modal" data-target="#sparepartModal" onclick="setModal()">
                         <div class="carding">
                             <div class="carding-img">
                                 <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
@@ -425,93 +159,6 @@
                                 <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
                             </div>
                         </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
-                        <div class="carding">
-                            <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                            </div>
-                            <div class="carding-title" style="text-align:center;">
-                                <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
-                        <div class="carding">
-                            <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                            </div>
-                            <div class="carding-title" style="text-align:center;">
-                                <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
-                        <div class="carding">
-                            <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                            </div>
-                            <div class="carding-title" style="text-align:center;">
-                                <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
-                        <div class="carding">
-                            <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                            </div>
-                            <div class="carding-title" style="text-align:center;">
-                                <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
-                        <div class="carding">
-                            <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                            </div>
-                            <div class="carding-title" style="text-align:center;">
-                                <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
-                        <div class="carding">
-                            <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                            </div>
-                            <div class="carding-title" style="text-align:center;">
-                                <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
-                        <div class="carding">
-                            <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                            </div>
-                            <div class="carding-title" style="text-align:center;">
-                                <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
-                            </div>
-                        </div>
-                    </a>
                 </div>
             </div>
         </div>
@@ -545,8 +192,7 @@
         </div>
         <div>
             <div class="row">
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
+                <div style="cursor:pointer;" class="col-md-3" data-toggle="modal" data-target="#sparepartModal" onclick="setModal()">
                         <div class="carding">
                             <div class="carding-img">
                                 <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
@@ -555,93 +201,6 @@
                                 <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
                             </div>
                         </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
-                        <div class="carding">
-                            <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                            </div>
-                            <div class="carding-title" style="text-align:center;">
-                                <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
-                        <div class="carding">
-                            <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                            </div>
-                            <div class="carding-title" style="text-align:center;">
-                                <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
-                        <div class="carding">
-                            <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                            </div>
-                            <div class="carding-title" style="text-align:center;">
-                                <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
-                        <div class="carding">
-                            <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                            </div>
-                            <div class="carding-title" style="text-align:center;">
-                                <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
-                        <div class="carding">
-                            <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                            </div>
-                            <div class="carding-title" style="text-align:center;">
-                                <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
-                        <div class="carding">
-                            <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                            </div>
-                            <div class="carding-title" style="text-align:center;">
-                                <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="<?= base_url()?>blog/data" class="sampleClick">
-                        <div class="carding">
-                            <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                            </div>
-                            <div class="carding-title" style="text-align:center;">
-                                <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
-                            </div>
-                        </div>
-                    </a>
                 </div>
             </div>
         </div>
