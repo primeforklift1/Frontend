@@ -11,6 +11,15 @@ $(document).ready(function(){
         lang = 'id'
     }
 
+    let labelBahasa = 'Bahasa';
+    if(lang == 'cn'){
+        labelBahasa = '语言';
+    }else if(lang == 'jp'){
+        labelBahasa = '言語';
+    }else if(lang == 'gn'){
+        labelBahasa = 'Sprache';
+    }
+
     // get api menu
     fetch(apiURL+'/api/menu', {
         method: 'POST',
@@ -29,10 +38,10 @@ $(document).ready(function(){
         $.each(data.data, function(index, item) {
             if(item.menu_type == 0){
                 menuList += `<li class="nav-item mx-3">
-                                <a class="nav-link text-white" href="`+baseUrl+item.link+`">`+item.menu_name+` <span class="sr-only"></span></a>
+                                <a class="nav-link text-white" href="`+baseUrl+lang+'/'+item.link+`">`+item.menu_name+` <span class="sr-only"></span></a>
                              </li>`;
                 menuListWhite += `<li class="nav-item mx-3">
-                                    <a class="nav-link" href="`+baseUrl+item.link+`" style="color:#0072ff !important;">`+item.menu_name+`<span class="sr-only"></span></a>
+                                    <a class="nav-link" href="`+baseUrl+lang+'/'+item.link+`" style="color:#0072ff !important;">`+item.menu_name+`<span class="sr-only"></span></a>
                                   </li>`;
             }else if(item.menu_type == 1){
                 let tmpmenuList =`<li class="nav-item mx-3 dropdown">
@@ -49,8 +58,8 @@ $(document).ready(function(){
                                     <div class="dropdown-menu">`;
 
                 $.each(item.child,function(index,list){
-                    tmpmenuList += `<a class="dropdown-item" href="`+baseUrl+list.link+`">`+list.menu_name+`</a>`;
-                    tmpmenuListWhite += `<a class="dropdown-item" href="`+baseUrl+list.link+`">`+list.menu_name+`</a>`;
+                    tmpmenuList += `<a class="dropdown-item" href="`+baseUrl+lang+'/'+list.link+`">`+list.menu_name+`</a>`;
+                    tmpmenuListWhite += `<a class="dropdown-item" href="`+baseUrl+lang+'/'+list.link+`">`+list.menu_name+`</a>`;
                 });
 
 
@@ -73,14 +82,14 @@ $(document).ready(function(){
         menuList += `<li class="nav-item mx-3 dropdown">
                         <a id="langName" class="nav-link dropdown-toggle text-white" href=" #" role="button" data-toggle="dropdown"
                             aria-expanded="false">
-                            Bahasa
+                            `+labelBahasa+`
                         </a>
                         <div id="optionLang" class="dropdown-menu" style="background-color: rgba(255, 255, 255, 0);border:none;"></div>
                     </li>`;
         menuListWhite += `<li class="nav-item mx-3 dropdown">
                     <a  id="langName" class="nav-link dropdown-toggle" href=" #" style="color:#0072ff !important;" role="button"
                         data-toggle="dropdown" aria-expanded="false">
-                        Bahasa
+                        `+labelBahasa+`
                     </a>
                     <div id="optionLang" class="dropdown-menu" style="background-color: rgba(255, 255, 255, 0); border:none;"></div>
                 </li>`;
