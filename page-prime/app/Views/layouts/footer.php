@@ -162,6 +162,88 @@
   </div>
 </div>
 
+<!-- modal layanan rental -->
+<div class="modal fade" id="rentalModal" tabindex="-1" aria-labelledby="rentalModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content" style="border-radius: 1rem;">
+    <div class="modal-header" style="border-bottom: none;padding:0px;padding-right:20px !important; padding-top:20px !important;"">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="carding-title" style="text-align:center;">
+                    <h4><b><span id="imgName">FORKLIFT TOYOTA 2,5 TON</span></b></h4>
+                </div>
+            </div>
+            <div class="col-md-6"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 d-flex justify-content-center align-items-center" style="text-align: center;">
+                <img id="imgModal" width="60%;" src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
+            </div>
+            <div class="col-md-6">
+                <table class="table">
+                    <tr>
+                        <td>Model</td>
+                        <td id="modelData">-</td>
+                    </tr>
+                    <tr>
+                        <td>Kapasitas</td>
+                        <td id="kapasitasData">-</td>
+                    </tr>
+                    <tr>
+                        <td>Lifting Height</td>
+                        <td id="liftData">-</td>
+                    </tr>
+                    <tr>
+                        <td>Daya Batterai</td>
+                        <td id="batteraiData">-</td>
+                    </tr>
+                    <tr>
+                        <td>Durasi Operasi</td>
+                        <td id="operationData">-</td>
+                    </tr>
+                    <tr>
+                        <td>Ukuran Fork</td>
+                        <td id="forkData">-</td>
+                    </tr>
+                    <tr>
+                        <td>Lama Rental</td>
+                        <td id="rentData">-</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- modal layanan service -->
+<div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="serviceModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content" style="border-radius: 1rem;" >
+    <div class="modal-header" style="border-top-left-radius: 1rem; border-top-right-radius: 1rem;;background-color: #D9D9D9; border-bottom: none;padding:0px;padding-right:20px !important; padding-top:20px !important;height:120px;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row" style="background-color: white;">
+            <div class="col-md-12 cards" style="padding: 30px;">
+                <div class="carding-title">
+                    <h4><b><span id="imgName">Service Periodik</span></b></h4>
+                </div>
+                <p id="descData">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi aliquam neque temporibus alias et inventore fuga repellendus ut quae a. Odit molestias earum esse dolores quas ab ullam, reprehenderit magni.</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- modal modal -->
 </body>
 

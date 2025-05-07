@@ -4,7 +4,7 @@
 <div class="isi-konten">
     <div class="about">Layanan Service</div>
     <div class="row" style="margin-top:30px;">
-        <div class="col-md-3 cards">
+        <div class="col-md-3 cards" data-toggle="modal" data-target="#serviceModal" onclick="setModal()" style="cursor:pointer;">
             <div class="carding">
                 <div class="carding-img-ico">
                     <img style="width:100px;" src="<?= base_url() ?>img/helmet-safety-solid.svg" alt="...">
@@ -14,7 +14,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3 cards">
+        <div class="col-md-3 cards" data-toggle="modal" data-target="#serviceModal" onclick="setModal()" style="cursor:pointer;">
             <div class="carding">
                 <div class="carding-img-ico">
                     <img style="width:100px;" src="<?= base_url() ?>img/gear-solid-white.svg" alt="...">
@@ -24,7 +24,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3 cards">
+        <div class="col-md-3 cards" data-toggle="modal" data-target="#serviceModal" onclick="setModal()" style="cursor:pointer;">
             <div class="carding">
                 <div class="carding-img-ico">
                     <img style="width:100px;" src="<?= base_url() ?>img/Automation.png" alt="...">
@@ -34,7 +34,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3 cards">
+        <div class="col-md-3 cards" data-toggle="modal" data-target="#serviceModal" onclick="setModal()" style="cursor:pointer;">
             <div class="carding">
                 <div class="carding-img-ico">
                     <img style="width:100px;" src="<?= base_url() ?>img/Engine.png" alt="...">
@@ -49,7 +49,7 @@
 
     <div class="about">Rental Forklift</div>
     <div class="row" style="margin-top:60px;">
-        <div class="col-md-3">
+        <div style="cursor:pointer;" class="col-md-3" data-toggle="modal" data-target="#rentalModal" onclick="setModal()">
             <div class="carding">
                 <div class="carding-img">
                     <img src="<?= base_url() ?>img/pngwing-com-10-6.png" alt="...">
@@ -59,7 +59,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div style="cursor:pointer;" class="col-md-3" data-toggle="modal" data-target="#rentalModal" onclick="setModal()">
             <div class="carding">
                 <div class="carding-img">
                     <img src="<?= base_url() ?>img/pngwing-com-10-8.png" alt="...">
@@ -69,7 +69,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div style="cursor:pointer;" class="col-md-3" data-toggle="modal" data-target="#rentalModal" onclick="setModal()">
             <div class="carding">
                 <div class="carding-img">
                     <img src="<?= base_url() ?>img/JGBHGYHG-3.png" alt="...">
@@ -79,7 +79,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div style="cursor:pointer;" class="col-md-3" data-toggle="modal" data-target="#rentalModal" onclick="setModal()">
             <div class="carding">
                 <div class="carding-img">
                     <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
+    <link rel="icon" href="<?= base_url() ?>img/fav.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="<?= base_url() ?>css/style.css">
@@ -40,8 +41,8 @@
                     </a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="<?= base_url()?>produk">Semua Produk</a>
-                        <a class="dropdown-item" href="<?= base_url()?>sparepart">Sparepart</a>
                         <a class="dropdown-item" href="<?= base_url()?>forklift">Unit Forklift</a>
+                        <a class="dropdown-item" href="<?= base_url()?>sparepart">Sparepart</a>
                         <a class="dropdown-item" href="<?= base_url()?>ban">Ban Forklift</a>
                         <a class="dropdown-item" href="<?= base_url()?>battery">Battery</a>
                         <a class="dropdown-item" href="<?= base_url()?>attachement">Attachment</a>
