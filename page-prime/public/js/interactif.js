@@ -245,52 +245,68 @@ $(document).ready(function(){
         },
         body: JSON.stringify({
           lang: lang,
-          config_type:"about"
+          status: 1,
         })
       })
     .then(response => response.json())
     .then(data => {
         let configListlanding = '';
         let configList = '';
+        let socList = '';
+        let marketList = '';
+        let contactList = '';
             $.each(data.data, function(index, item) {
                 console.log(index);
-                if(item.image != ""){
-                    configListlanding += `<div class="about">`+item.config_name+`</div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    `+item.config_value+`
-                                                </div>
-                                                <div class="col-md-6" style="text-align: center;">
-                                                    <img width="60%" src="`+baseUrl+item.image+`" />
-                                                </div>
-                                            </div>`;
-                    configList += `<div class="about">`+item.config_name+`</div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    `+item.config_value+`
-                                                </div>
-                                                <div class="col-md-6" style="text-align: center;">
-                                                    <img width="60%" src="`+baseUrl+item.image+`" />
-                                                </div>
-                                            </div>`;
-                }else{
-                    configList += `<div class="about">`+item.config_name+`</div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    `+item.config_value+`
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="box">
-                                                        <div class="rectangle">
+                if(item.config_type == "about"){
+                    if(item.image != ""){
+                        configListlanding += `<div class="about">`+item.config_name+`</div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        `+item.config_value+`
+                                                    </div>
+                                                    <div class="col-md-6" style="text-align: center;">
+                                                        <img width="60%" src="`+baseUrl+item.image+`" />
+                                                    </div>
+                                                </div>`;
+                        configList += `<div class="about">`+item.config_name+`</div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        `+item.config_value+`
+                                                    </div>
+                                                    <div class="col-md-6" style="text-align: center;">
+                                                        <img width="60%" src="`+baseUrl+item.image+`" />
+                                                    </div>
+                                                </div>`;
+                    }else{
+                        configList += `<div class="about">`+item.config_name+`</div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        `+item.config_value+`
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="box">
+                                                            <div class="rectangle">
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>`;
+                                                </div>`;
+                    }
+                }else if(item.config_type == "soc"){
+                    socList += `<img style="margin-right:2px;" src="`+baseUrl+item.image+`" alt="">`;
+                    
+                }else if(item.config_type == "market"){
+                    marketList += `<img class="image-7" width="60" src="`+baseUrl+item.image+`" />`;
+
+                }else{
+                    contactList += `<div style="margin-top:10px;" class="text-wrapper-33"><img src="`+baseUrl+item.image+`" alt="" width="15">`+item.config_value+`</div>`;
                 }
             });
             
             $("#tentang-kami-single").html(configListlanding);
             $("#tentang-kami").html(configList);
+            $("#socialData").html(socList);
+            $("#marketData").html(marketList);
+            $("#contactData").html(contactList);
     })
     .catch(error => {
         console.error('Error:', error.message);
