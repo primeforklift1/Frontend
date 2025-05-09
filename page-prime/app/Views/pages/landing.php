@@ -31,22 +31,6 @@
 </div>
 <div class="isi-konten">
     <div id="tentang-kami-single">
-        <div class="about">About Us</div>
-        <div class="row">
-            <div class="col-md-6">
-                <h4>PT PRIME FORKLIFT SERVICES</h4>
-                <p style="text-align:justify;">IT'S PRIME SERVICES
-                    Berbekal pengalaman di pemeliharaan Forklift berbagai merek selama lebih dari 20 tahun, maka kami
-                    mendirikan perusahaan PT PRIME FORKLIFT SERVICE ini untuk dapat melayani Pelanggan dengan PRIMA.
-                    "IT'S PRIME SERVICES" menjadi Slogan Kami.
-                    PT. Prime Forklift Services, berdiri karena VISI dari founder yang ingin :
-                    "Menjadi rekan TERPERCAYA dalam penangan barang" / "To be A TRUSTED partner in material handling"
-                    Kami juga dipercaya sebagai Authorized Dealer dari Forklift merk Komatsu, Mitsubishi dan Nichiyu.</p>
-            </div>
-            <div class="col-md-6" style="text-align: center;">
-                <img width="60%" src="<?= base_url() ?>img/about-img.png" />
-            </div>
-        </div>
     </div>
     <div style="margin-top:60px;">
         <div class="rectangle-7"></div>
