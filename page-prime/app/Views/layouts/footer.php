@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-3">
-                <div class="text-wrapper-30">Sosial media</div>
+                <div class="text-wrapper-30" id="social">Sosial media</div>
                 <div>
                     <img style="margin-right:2px;" src="<?= base_url() ?>img/fb.png" alt="">
                     <img style="margin-right:2px;" src="<?= base_url() ?>img/tik.png" alt="">
@@ -10,33 +10,18 @@
                     <img style="margin-right:2px;" src="<?= base_url() ?>img/ig.png" alt="">
                 </div>
 
-                <div class="text-wrapper-29">Marketplace</div>
+                <div class="text-wrapper-29" id="market">Marketplace</div>
                 <div style="margin-left:-15px;">
                     <img class="image-7" width="60" src="<?= base_url() ?>img/image-23.png" />
                     <img class="image-8" style="margin-left:-10px;" width="40" src="<?= base_url() ?>img/image-24.png" />
                     <img class="image-8" width="40" src="<?= base_url() ?>img/image-25.png" />
                 </div>
             </div>
-            <div class="col-sm-3">
-                <div class="text-wrapper-30">Pages</div>
-                <div class="flexcontainer">
-                    <p class="text">
-                        <span class="text-wrapper-31">Beranda<br /></span>
-                    </p>
-                    <p class="text">
-                        <span class="text-wrapper-31">Tentang Kami<br /></span>
-                    </p>
-                    <p class="text">
-                        <span class="text-wrapper-31">Produk<br /></span>
-                    </p>
-                    <p class="text">
-                        <span class="text-wrapper-31">Layanan<br /></span>
-                    </p>
-                    <p class="text"><span class="text-wrapper-31">Blog</span></p>
-                </div>
+            <div class="col-sm-3" id="footer-pages">
+                
             </div>
             <div class="col-sm-3">
-                <div class="text-wrapper-30">Contact</div>
+                <div class="text-wrapper-30" id="contact">Contact</div>
                 <div class="group-13">
                     <div class="text-wrapper-33"><img src="<?= base_url() ?>img/phone-solid.svg" alt="" width="15">&nbsp
                         (0267)-8402034</div>

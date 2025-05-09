@@ -1,7 +1,7 @@
 <?= $this->extend('layouts/main-menu') ?>
 
 <?= $this->section('content') ?>
-<div class="isi-konten">
+<div class="isi-konten" id="tentang-kami">
     <div class="about">About Us</div>
     <div class="row">
         <div class="col-md-6">

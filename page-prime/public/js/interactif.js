@@ -7,16 +7,96 @@ $(document).ready(function(){
     console.log("Bahasa Saat ini : ",lang);
 
     if(lang == null){
-        lang = 'id'
-    }
+        lang = 'id';
 
+    }
+    
     let labelBahasa = 'Bahasa';
+    $("#footer-pages").html(`<div class="text-wrapper-30">Pages</div>
+            <div class="flexcontainer">
+                <p class="text">
+                    <span class="text-wrapper-31">Beranda<br /></span>
+                </p>
+                <p class="text">
+                    <span class="text-wrapper-31">Tentang Kami<br /></span>
+                </p>
+                <p class="text">
+                    <span class="text-wrapper-31">Produk<br /></span>
+                </p>
+                <p class="text">
+                    <span class="text-wrapper-31">Layanan<br /></span>
+                </p>
+                <p class="text"><span class="text-wrapper-31">Blog</span></p>
+            </div>`);
     if(lang == 'cn'){
         labelBahasa = '语言';
+
+        $("#footer-pages").html(`<div class="text-wrapper-30">页面</div>
+            <div class="flexcontainer">
+            <p class="text">
+            <span class="text-wrapper-31">主页<br /></span>
+            </p>
+            <p class="text">
+            <span class="text-wrapper-31">关于我们<br /></span>
+            </p>
+            <p class="text">
+            <span class="text-wrapper-31">产品<br /></span>
+            </p>
+            <p class="text">
+            <span class="text-wrapper-31">服务<br /></span>
+            </p>
+            <p class="text"><span class="text-wrapper-31">博客</span></p>
+            </div>`);
+
+        $("#social").text('社交媒体');
+        $("#market").text('市场');
+        $("#contact").text('接触');
     }else if(lang == 'jp'){
         labelBahasa = '言語';
+        
+        $("#footer-pages").html(`<div class="text-wrapper-30">ページ</div>
+            <div class="flexcontainer">
+            <p class="text">
+            <span class="text-wrapper-31">ホームページ<br /></span>
+            </p>
+            <p class="text">
+            <span class="text-wrapper-31">当社について<br /></span>
+            </p>
+            <p class="text">
+            <span class="text-wrapper-31">製品<br /></span>
+            </p>
+            <p class="text">
+            <span class="text-wrapper-31">サービス<br /></span>
+            </p>
+            <p class="text"><span class="text-wrapper-31">ブログ</span></p>
+            </div>`);
+
+            $("#social").text('ソーシャルメディア');
+            $("#market").text('市場');
+            $("#contact").text('接触');
     }else if(lang == 'gn'){
         labelBahasa = 'Sprache';
+
+        $("#footer-pages").html(`<div class="text-wrapper-30">Seiten</div>
+            <div class="flexcontainer">
+            <p class="text">
+            <span class="text-wrapper-31">Startseite<br /></span>
+            </p>
+            <p class="text">
+            <span class="text-wrapper-31">Über uns<br /></span>
+            </p>
+            <p class="text">
+            <span class="text-wrapper-31">Produkte<br /></span>
+            </p>
+            <p class="text">
+            <span class="text-wrapper-31">Seite<br /></span>
+            </p>
+            <p class="text"><span class="text-wrapper-31">Blog</span></p>
+            </div>`);
+
+            $("#social").text('Soziale Medien');
+            $("#market").text('Marktplatz');
+            $("#contact").text('Kontakt');
     }
 
     // get api menu
@@ -150,9 +230,67 @@ $(document).ready(function(){
                     </div>
                 `;
             });
-            console.log(sliderList);
             
             $("#sliderData").html(sliderList);
+    })
+    .catch(error => {
+        console.error('Error:', error.message);
+    });
+
+    // get api About
+    fetch(apiURL+'/api/config/where', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          lang: lang,
+          config_type:"about"
+        })
+      })
+    .then(response => response.json())
+    .then(data => {
+        let configListlanding = '';
+        let configList = '';
+            $.each(data.data, function(index, item) {
+                console.log(index);
+                if(item.image != ""){
+                    configListlanding += `<div class="about">`+item.config_name+`</div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    `+item.config_value+`
+                                                </div>
+                                                <div class="col-md-6" style="text-align: center;">
+                                                    <img width="60%" src="`+baseUrl+item.image+`" />
+                                                </div>
+                                            </div>`;
+                    configList += `<div class="about">`+item.config_name+`</div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    `+item.config_value+`
+                                                </div>
+                                                <div class="col-md-6" style="text-align: center;">
+                                                    <img width="60%" src="`+baseUrl+item.image+`" />
+                                                </div>
+                                            </div>`;
+                }else{
+                    configList += `<div class="about">`+item.config_name+`</div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    `+item.config_value+`
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="box">
+                                                        <div class="rectangle">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>`;
+                }
+            });
+            
+            $("#tentang-kami-single").html(configListlanding);
+            $("#tentang-kami").html(configList);
     })
     .catch(error => {
         console.error('Error:', error.message);
