@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
+  <div class="carousel-inner" id="sliderData">
     <div class="carousel-item position-relative active">
         <img class="d-block h-100"
             src="<?= base_url() ?>img/plant-production-cars-modern-automotive-industry-electric-car-factory-conveyor.png"
@@ -11,21 +11,6 @@
         <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
             <p class="selamat-datang-di text-white">
             SELAMAT DATANG DI PRIME FORKLIFT SERVICES
-            </p>
-            <p class="solusi-terbaik-untuk text-white">
-            Solusi Terbaik untuk Forklift Anda<br />
-            Prime Forklift Services adalah mitra terpercaya Anda dalam menyediakan forklift berkualitas, layanan sewa fleksibel, dan suku cadang asli terbaik.
-            </p>
-        </div>
-    </div>
-    <div class="carousel-item position-relative">
-        <img class="d-block h-100"
-            src="<?= base_url() ?>img/plant-production-cars-modern-automotive-industry-electric-car-factory-conveyor.png"
-             style="align-items: center;" />
-        <div class="dark-overlay position-absolute w-100 h-100"></div>
-        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
-            <p class="selamat-datang-di text-white">
-            SELAMAT DATANG DI PRIME2 FORKLIFT SERVICES
             </p>
             <p class="solusi-terbaik-untuk text-white">
             Solusi Terbaik untuk Forklift Anda<br />

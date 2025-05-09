@@ -3,7 +3,6 @@ $(document).ready(function(){
 
     console.log(baseUrl);
 
-    console.log("iam ready");
     var lang = sessionStorage.getItem("language");
     console.log("Bahasa Saat ini : ",lang);
 
@@ -32,7 +31,6 @@ $(document).ready(function(){
       })
     .then(response => response.json())
     .then(data => {
-        console.log('GET response:', data.data);
         let menuList = '';
         let menuListWhite = '';
         $.each(data.data, function(index, item) {
@@ -100,13 +98,11 @@ $(document).ready(function(){
         fetch(apiURL+'/api/language')
         .then(response => response.json())
         .then(data => {
-            console.log('GET response:', data.data);
             let languageList = '';
             $.each(data.data, function(index, item) {
                 //     languageList += `<a onclick="setlanguages('id')" class="dropdown-item" href="<?= base_url()?>id/"><img src="<?= base_url()?>img/id.png" alt=""></a>`;
                 languageList += `<a onclick="setlanguages('`+item.sort_name+`')" class="dropdown-item" href="`+baseUrl+item.sort_name+`/"><img src="`+baseUrl+item.flag_image+`" alt=""></a>`;
             });
-            console.log(languageList);
             
             $("#optionLang").html(languageList);
         })
@@ -118,5 +114,48 @@ $(document).ready(function(){
         console.error('Error:', error.message);
     });
 
+
+    // get api slider
+    fetch(apiURL+'/api/slider/where', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          lang: lang,
+        })
+      })
+    .then(response => response.json())
+    .then(data => {
+        let sliderList = '';
+            $.each(data.data, function(index, item) {
+                console.log(index);
+                let act = '';
+                if(index == 0){
+                    act = 'active';
+                }
+                sliderList += `
+                    <div class="carousel-item position-relative `+act+`">
+                        <img class="d-block h-100"
+                            src="`+baseUrl+item.image+`"
+                            style="align-items: center;" />
+                        <div class="dark-overlay position-absolute w-100 h-100"></div>
+                        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+                            <p class="selamat-datang-di text-white">
+                            `+item.title+`
+                            </p>
+                            <p class="solusi-terbaik-untuk text-white">
+                            `+item.text+`</p>
+                        </div>
+                    </div>
+                `;
+            });
+            console.log(sliderList);
+            
+            $("#sliderData").html(sliderList);
+    })
+    .catch(error => {
+        console.error('Error:', error.message);
+    });
 
 });
