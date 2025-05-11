@@ -3,21 +3,6 @@
 <?= $this->section('content') ?>
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner" id="sliderData">
-    <div class="carousel-item position-relative active">
-        <img class="d-block h-100"
-            src="<?= base_url() ?>img/plant-production-cars-modern-automotive-industry-electric-car-factory-conveyor.png"
-             style="align-items: center;" />
-        <div class="dark-overlay position-absolute w-100 h-100"></div>
-        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
-            <p class="selamat-datang-di text-white">
-            SELAMAT DATANG DI PRIME FORKLIFT SERVICES
-            </p>
-            <p class="solusi-terbaik-untuk text-white">
-            Solusi Terbaik untuk Forklift Anda<br />
-            Prime Forklift Services adalah mitra terpercaya Anda dalam menyediakan forklift berkualitas, layanan sewa fleksibel, dan suku cadang asli terbaik.
-            </p>
-        </div>
-    </div>
    </div>
 
    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -84,114 +69,11 @@
         </div>
     </div>
 
-    <div class="row" style="margin-top:60px;">
-        <div class="col-md-4" style="text-align:center;margin-top:70px;">
-            <img class="rent" width="90%" src="<?= base_url() ?>img/pngwing-com-10-5.png" />
-        </div>
-        <div class="col-md-8">
-            <span class="why">Rental</span>
-            <div class="des-1">Solusi Sewa Forklift untuk Semua Kebutuhan Anda!</div><br>
-            <div class="des-1">
-                <p>PT. PRIME FORKLIFT SERVICES Salah satu perusahaan jasa sewa forklift yang pelayanan nya mencakup
-                    daerah Karawang , Cikarang , Bekasi dan sekitarnya. menjadi perusahaan sewa yang terpercaya dan
-                    pelayanan yang profesional untuk membantu kelancaran perindustrian.
-                </p>
-                <p>Kenapa harus sewa forklift ? Besarnya biaya maintance forklift dan dapat menimbulkan kendala dalam semua proses berlangsungnya aktifitas di pabrik maka dari itu kami menawarkan solusi bagi anda dengan sewa kontrak kami menjamin semua kelancaran alat berat forklift ketika di pakai.
-                </p>
-                   
-                   
-          
-            </div>
-        </div>
-    </div>
+    <div id="landingRental"></div>
 
-    <div class="row" style="margin-top:60px;">
-        <div class="col-md-3">
-            <div class="carding">
-                <div class="carding-img">
-                    <img src="<?= base_url() ?>img/pngwing-com-10-6.png" alt="...">
-                </div>
-                <div class="carding-title" style="text-align:center;">
-                    <h6><b>Forklift Diesel</b></h6>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="carding">
-                <div class="carding-img">
-                    <img src="<?= base_url() ?>img/pngwing-com-10-8.png" alt="...">
-                </div>
-                <div class="carding-title" style="text-align:center;">
-                    <h6><b>Forklift Elektrik Counter Balance</b></h6>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="carding">
-                <div class="carding-img">
-                    <img src="<?= base_url() ?>img/JGBHGYHG-3.png" alt="...">
-                </div>
-                <div class="carding-title" style="text-align:center;">
-                    <h6><b>Forklift Elektrik Reachtruck</b></h6>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="carding">
-                <div class="carding-img">
-                    <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                </div>
-                <div class="carding-title" style="text-align:center;">
-                    <h6><b>Stacker Elektrik Handpallet</b></h6>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div id="landingRentalList"></div>
 
-    <div style="text-align:center;margin-top:60px;">
-        <span class="why">Layanan Service</span>
-    </div>
-    <div class="row" style="margin-top:30px;">
-        <div class="col-md-3 cards">
-            <div class="carding">
-                <div class="carding-img-ico">
-                    <img style="width:100px;" src="<?= base_url() ?>img/helmet-safety-solid.svg" alt="...">
-                    <div class="carding-title" style="text-align:center;">
-                        <h6><b>Servis Periodik/Rutin</b></h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 cards">
-            <div class="carding">
-                <div class="carding-img-ico">
-                    <img style="width:100px;" src="<?= base_url() ?>img/gear-solid-white.svg" alt="...">
-                    <div class="carding-title" style="text-align:center;">
-                        <h6><b>Service General/ Besar</b></h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 cards">
-            <div class="carding">
-                <div class="carding-img-ico">
-                    <img style="width:100px;" src="<?= base_url() ?>img/Automation.png" alt="...">
-                    <div class="carding-title" style="text-align:center;">
-                        <h6><b>Overhaul Transmisi</b></h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 cards">
-            <div class="carding">
-                <div class="carding-img-ico">
-                    <img style="width:100px;" src="<?= base_url() ?>img/Engine.png" alt="...">
-                    <div class="carding-title" style="text-align:center;">
-                        <h6><b>Overhaul Engine</b></h6>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div id="landingService">
     </div>
 
     <div style="text-align:center;margin-top:60px;">

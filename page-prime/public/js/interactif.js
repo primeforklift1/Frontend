@@ -203,6 +203,7 @@ $(document).ready(function(){
         },
         body: JSON.stringify({
           lang: lang,
+          status: 1,
         })
       })
     .then(response => response.json())
@@ -307,6 +308,80 @@ $(document).ready(function(){
             $("#socialData").html(socList);
             $("#marketData").html(marketList);
             $("#contactData").html(contactList);
+    })
+    .catch(error => {
+        console.error('Error:', error.message);
+    });
+    // get api Layanan
+    fetch(apiURL+'/api/service/where', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          lang: lang,
+          status: 1,
+        })
+      })
+    .then(response => response.json())
+    .then(data => {
+        let rental = '';
+        let service = '';
+
+        let titleService = '';
+        let titleRental = '';
+        let landingRental = '';
+            $.each(data.data, function(index, item) {
+                console.log(index);
+                if(item.group == "rental"){
+                    if(item.preface != null || ""){
+                        landingRental = `<div class="row" style="margin-top:60px;">
+                                            <div class="col-md-4" style="text-align:center;margin-top:70px;">
+                                                <img class="rent" width="90%" src="`+baseUrl+item.image+`" />
+                                            </div>
+                                            <div class="col-md-8">
+                                                <span class="why">`+item.title_name+`</span>
+                                                <div class="des-1">`+item.preface+`</div><br>
+                                                <div class="des-1">`+item.detail+`
+                                                </div>
+                                            </div>
+                                        </div>`;
+                    }else{
+                        console.log(item);
+                        titleRental = item.title_name;
+                        rental += `<div style="cursor:pointer;" class="col-md-3" data-toggle="modal" data-target="#rentalModal" onclick="setModal()">
+                                        <div class="carding">
+                                            <div class="carding-img">
+                                                <img src="`+baseUrl+item.image+`" alt="...">
+                                            </div>
+                                            <div class="carding-title" style="text-align:center;">
+                                                <h6><b>`+item.name+`</b></h6>
+                                            </div>
+                                        </div>
+                                    </div>`;
+                    }
+                
+                }else{
+                    titleService = item.title_name;
+                    service += `<div class="col-md-3 cards" data-toggle="modal" data-target="#serviceModal" onclick="setModal()" style="cursor:pointer;">
+                                    <div class="carding">
+                                        <div class="carding-img-ico">
+                                            <img style="width:100px;" src="`+baseUrl+item.image+`" alt="...">
+                                            <div class="carding-title" style="text-align:center;">
+                                                <h6><b>`+item.name+`</b></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>`;
+                }
+            });
+            
+            $("#landingService").html(`<div style="text-align:center;margin-top:60px;"><span class="why">`+titleService+`</span></div><div class="row" style="margin-top:30px;">`+service+`</div>`);
+            $("#layananAllDataService").html(`<div class="about">`+titleService+`</div><div class="row" style="margin-top:30px;" id="serviceAllData">`+service+`</div>`);
+            
+            $("#landingRental").html(landingRental);
+            $("#landingRentalList").html(`<div class="row" style="margin-top:60px;">`+rental+`</div>`);
+            $("#layananAllDataRental").html(`<div class="about">`+titleRental+`</div><div class="row" style="margin-top:60px;">`+rental+`</div>`);
     })
     .catch(error => {
         console.error('Error:', error.message);
