@@ -213,6 +213,38 @@
 </div>
 
 <!-- modal modal -->
+<a href="https://wa.me/6281234567890" target="_blank" id="whatsapp-fab">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat via WhatsApp" />
+</a>
+
+<style>
+  #whatsapp-fab {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 64px;
+    height: 64px;
+    z-index: 9999;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    background-color: #25D366;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease;
+  }
+
+  #whatsapp-fab:hover {
+    transform: scale(1.1);
+  }
+
+  #whatsapp-fab img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+  }
+</style>
 </body>
 
 </html>

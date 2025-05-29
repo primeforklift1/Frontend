@@ -17,7 +17,7 @@
                 <div class="judul-produk">Forklift</div>
             </div>
             <div class="col-md-2" style="text-align:right;margin-top:10px;">
-                <select class="form-control form-control-sm">
+                <select class="form-control form-control-sm merk">
                     <option>Forklift Toyota</option>
                     <option>Forklift Niciyu</option>
                 </select>
@@ -57,7 +57,7 @@
             <div class="col-md-10">
                 <div class="judul-produk">Sparepart</div>
             </div>
-            <div class="col-md-2" style="text-align:right;margin-top:10px;">
+                <select class="form-control form-control-sm merk">
                 <select class="form-control form-control-sm">
                     <option>Forklift Toyota</option>
                     <option>Forklift Niciyu</option>
@@ -100,7 +100,7 @@
                 <div class="judul-produk">Ban Forklift</div>
             </div>
             <div class="col-md-2" style="text-align:right;margin-top:10px;">
-                <select class="form-control form-control-sm">
+                <select class="form-control form-control-sm merk">
                     <option>Forklift Toyota</option>
                     <option>Forklift Niciyu</option>
                 </select>
@@ -142,7 +142,7 @@
                 <div class="judul-produk">Battery</div>
             </div>
             <div class="col-md-2" style="text-align:right;margin-top:10px;">
-                <select class="form-control form-control-sm">
+                <select class="form-control form-control-sm merk">
                     <option>Forklift Toyota</option>
                     <option>Forklift Niciyu</option>
                 </select>
@@ -184,7 +184,7 @@
                 <div class="judul-produk">Attachment</div>
             </div>
             <div class="col-md-2" style="text-align:right;margin-top:10px;">
-                <select class="form-control form-control-sm">
+                <select class="form-control form-control-sm merk">
                     <option>Forklift Toyota</option>
                     <option>Forklift Niciyu</option>
                 </select>

@@ -1,0 +1,116 @@
+CRITICAL - 2025-05-14 01:19:48 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "pages/blogView.php"
+[Method: GET, Route: blog/sample-aja]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/blogView.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('pages/blogView', [], true)
+ 3 APPPATH\Controllers\Home.php(57): view('pages/blogView')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->blogView('sample-aja')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Doni\\Documents\\fe-primeforklift\\page-prime\\public\\index.php')
+CRITICAL - 2025-05-14 01:26:05 --> ErrorException: Undefined property: CodeIgniter\View\View::$uri
+[Method: GET, Route: blog/sample-aja]
+in APPPATH\Views\pages\blogView.php on line 8.
+ 1 APPPATH\Views\pages\blogView.php(8): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$uri', 'C:\\Users\\Doni\\Documents\\fe-primeforklift\\page-prime\\app\\Views\\pages\\blogView.php', 8)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\Users\\Doni\\Documents\\fe-primeforklift\\page-prime\\app\\Views\\pages\\blogView.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('pages/blogView', [], true)
+ 5 APPPATH\Controllers\Home.php(57): view('pages/blogView')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->blogView('sample-aja')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Doni\\Documents\\fe-primeforklift\\page-prime\\public\\index.php')
+CRITICAL - 2025-05-14 01:26:24 --> ErrorException: Undefined property: CodeIgniter\View\View::$uri
+[Method: GET, Route: blog/sample-aja]
+in APPPATH\Views\pages\blogView.php on line 8.
+ 1 APPPATH\Views\pages\blogView.php(8): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$uri', 'C:\\Users\\Doni\\Documents\\fe-primeforklift\\page-prime\\app\\Views\\pages\\blogView.php', 8)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\Users\\Doni\\Documents\\fe-primeforklift\\page-prime\\app\\Views\\pages\\blogView.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('pages/blogView', [], true)
+ 5 APPPATH\Controllers\Home.php(57): view('pages/blogView')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->blogView('sample-aja')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Doni\\Documents\\fe-primeforklift\\page-prime\\public\\index.php')
+CRITICAL - 2025-05-14 01:27:36 --> ErrorException: Undefined property: CodeIgniter\View\View::$uri
+[Method: GET, Route: blog/sample-aja]
+in APPPATH\Views\pages\blogView.php on line 8.
+ 1 APPPATH\Views\pages\blogView.php(8): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$uri', 'C:\\Users\\Doni\\Documents\\fe-primeforklift\\page-prime\\app\\Views\\pages\\blogView.php', 8)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\Users\\Doni\\Documents\\fe-primeforklift\\page-prime\\app\\Views\\pages\\blogView.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('pages/blogView', [], true)
+ 5 APPPATH\Controllers\Home.php(57): view('pages/blogView')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->blogView('sample-aja')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Doni\\Documents\\fe-primeforklift\\page-prime\\public\\index.php')
+CRITICAL - 2025-05-14 01:28:09 --> ErrorException: Undefined property: CodeIgniter\View\View::$uri
+[Method: GET, Route: blog/sample-aja]
+in APPPATH\Views\pages\blogView.php on line 8.
+ 1 APPPATH\Views\pages\blogView.php(8): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$uri', 'C:\\Users\\Doni\\Documents\\fe-primeforklift\\page-prime\\app\\Views\\pages\\blogView.php', 8)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\Users\\Doni\\Documents\\fe-primeforklift\\page-prime\\app\\Views\\pages\\blogView.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('pages/blogView', [], true)
+ 5 APPPATH\Controllers\Home.php(57): view('pages/blogView')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->blogView('sample-aja')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Doni\\Documents\\fe-primeforklift\\page-prime\\public\\index.php')
+CRITICAL - 2025-05-14 01:28:10 --> ErrorException: Undefined property: CodeIgniter\View\View::$uri
+[Method: GET, Route: blog/sample-aja]
+in APPPATH\Views\pages\blogView.php on line 8.
+ 1 APPPATH\Views\pages\blogView.php(8): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$uri', 'C:\\Users\\Doni\\Documents\\fe-primeforklift\\page-prime\\app\\Views\\pages\\blogView.php', 8)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\Users\\Doni\\Documents\\fe-primeforklift\\page-prime\\app\\Views\\pages\\blogView.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('pages/blogView', [], true)
+ 5 APPPATH\Controllers\Home.php(57): view('pages/blogView')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->blogView('sample-aja')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Doni\\Documents\\fe-primeforklift\\page-prime\\public\\index.php')
+CRITICAL - 2025-05-14 01:28:20 --> ErrorException: Undefined property: CodeIgniter\View\View::$uri
+[Method: GET, Route: blog/sample-aja]
+in APPPATH\Views\pages\blogView.php on line 8.
+ 1 APPPATH\Views\pages\blogView.php(8): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$uri', 'C:\\Users\\Doni\\Documents\\fe-primeforklift\\page-prime\\app\\Views\\pages\\blogView.php', 8)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\Users\\Doni\\Documents\\fe-primeforklift\\page-prime\\app\\Views\\pages\\blogView.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('pages/blogView', [], true)
+ 5 APPPATH\Controllers\Home.php(57): view('pages/blogView')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->blogView('sample-aja')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Doni\\Documents\\fe-primeforklift\\page-prime\\public\\index.php')
+CRITICAL - 2025-05-14 05:12:32 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "pages/sparepart.php"
+[Method: GET, Route: id/sparepart]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/sparepart.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('pages/sparepart', [], true)
+ 3 APPPATH\Controllers\Home.php(21): view('pages/sparepart')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->sparepart()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Doni\\Documents\\fe-primeforklift\\page-prime\\public\\index.php')

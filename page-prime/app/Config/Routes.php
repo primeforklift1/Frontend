@@ -5,6 +5,27 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
+// admin
+$routes->get('/login', 'Admin::login');
+$routes->get('/logout', 'Admin::logout');
+
+$routes->get('/admin', 'Admin::dashboard');
+$routes->get('/admin/bahasa', 'Admin::bahasa');
+$routes->get('/admin/kategori', 'Admin::kategori');
+$routes->get('/admin/merek', 'Admin::merek');
+$routes->get('/admin/client', 'Admin::client');
+
+$routes->get('/admin/menu', 'Admin::menu');
+$routes->get('/admin/info', 'Admin::info');
+$routes->get('/admin/slider', 'Admin::slider');
+$routes->get('/admin/produk', 'Admin::produk');
+$routes->get('/admin/layanan', 'Admin::layanan');
+$routes->get('/admin/blog', 'Admin::blog');
+$routes->get('/admin/pesan', 'Admin::pesan');
+
+
+$routes->post('copy-node-file', 'Admin::copyFromNode');
+
 // default routes
 $routes->get('/', 'Home::index');
 $routes->get('/tentang-kami', 'Home::tentangKami');
@@ -18,6 +39,7 @@ $routes->get('/layanan', 'Home::layanan');
 $routes->get('/rental', 'Home::rental');
 $routes->get('/service', 'Home::service');
 $routes->get('/blog', 'Home::blog');
+$routes->get('/blog/(:any)', 'Home::blogView/$1');
 // id routes
 $routes->get('/id', 'Home::index');
 $routes->get('/id/tentang-kami', 'Home::tentangKami');
@@ -31,6 +53,7 @@ $routes->get('/id/layanan', 'Home::layanan');
 $routes->get('/id/rental', 'Home::rental');
 $routes->get('/id/service', 'Home::service');
 $routes->get('/id/blog', 'Home::blog');
+$routes->get('/id/blog/(:any)', 'Home::blogView/$1');
 // cn routes
 $routes->get('/cn', 'Home::index');
 $routes->get('/cn/关于我们', 'Home::tentangKami');
@@ -44,6 +67,7 @@ $routes->get('/cn/所有服务', 'Home::layanan');
 $routes->get('/cn/出租', 'Home::rental');
 $routes->get('/cn/服务', 'Home::service');
 $routes->get('/cn/博客', 'Home::blog');
+$routes->get('/cn/博客/(:any)', 'Home::blogView/$1');
 // jp routes
 $routes->get('/jp', 'Home::index');
 $routes->get('/jp/私たちについて', 'Home::tentangKami');
@@ -57,6 +81,7 @@ $routes->get('/jp/すべてのサービス', 'Home::layanan');
 $routes->get('/jp/レンタル', 'Home::rental');
 $routes->get('/jp/サービス', 'Home::service');
 $routes->get('/jp/ブログ', 'Home::blog');
+$routes->get('/jp/ブログ/(:any)', 'Home::blogView/$1');
 // gn routes
 $routes->get('/gn', 'Home::index');
 $routes->get('/gn/über-uns', 'Home::tentangKami');
@@ -70,6 +95,10 @@ $routes->get('/gn/alle-ienstleistungen', 'Home::layanan');
 $routes->get('/gn/vermietung', 'Home::rental');
 $routes->get('/gn/service', 'Home::service');
 $routes->get('/gn/blog', 'Home::blog');
+$routes->get('/gn/blog/(:any)', 'Home::blogView/$1');
+
+
+
 // $routes->get('/(:any)', 'Home::setLanguage/$1');
 // $routes->get('/(:any)', 'Home::setLanguage/$1');
 // $routes->get('/(:any)', 'Home::setLanguage/$1');

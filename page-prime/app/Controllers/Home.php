@@ -18,23 +18,23 @@ class Home extends BaseController
     }
     public function sparepart(): string
     {
-        return view('pages/tentang-kami');
+        return view('pages/sparepart');
     }
     public function forklift(): string
     {
-        return view('pages/tentang-kami');
+        return view('pages/forklift');
     }
     public function ban(): string
     {
-        return view('pages/tentang-kami');
+        return view('pages/ban');
     }
     public function battery(): string
     {
-        return view('pages/tentang-kami');
+        return view('pages/battery');
     }
     public function attachment(): string
     {
-        return view('pages/tentang-kami');
+        return view('pages/attachment');
     }
     public function layanan(): string
     {
@@ -51,6 +51,10 @@ class Home extends BaseController
     public function blog(): string
     {
         return view('pages/blog');
+    }
+    public function blogView($id): string
+    {
+        return view('pages/blogView');
     }
     public function setLanguage($id): string
     {

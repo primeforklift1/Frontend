@@ -20,7 +20,6 @@
         const apiURL = "<?php echo getenv('NODE_API_URL'); ?>";
 
         function setlanguages(lang){
-        console.log("saat ini dalam bahasa "+lang);
         sessionStorage.setItem("language", lang);
     }
     </script>
