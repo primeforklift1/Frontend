@@ -4,7 +4,7 @@ services:
   app:
     build: .
     ports:
-      - "8080:8080"
+      - "6000:8080"
     volumes:
       - ./page-prime:/var/www
     working_dir: /var/www
