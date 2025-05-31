@@ -261,14 +261,50 @@ $(document).ready(function () {
         .then(response => response.json())
         .then(data => {
             let merkList = '';
+            let merkListView = '';
             $.each(data.data, function (index, item) {
                 
                 merkList += `
                     <option>`+item.nama+`</option>
                 `;
+                merkListView += `
+                    <div class="col-md-3">
+                        <img class="pngwing-com-4" width="100%" src="`+ baseUrl + item.image + `" />
+                    </div>
+                `;
             });
 
             $(".merk").html(merkList);
+            $("#merkList").html(merkListView);
+        })
+        .catch(error => {
+            console.error('Error:', error.message);
+        });
+
+    // get api client
+    fetch(apiURL + '/api/client/where', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            lang: lang,
+            status: 1,
+        })
+    })
+        .then(response => response.json())
+        .then(data => {
+            let clientView = '';
+            $.each(data.data, function (index, item) {
+                
+                clientView += `
+                    <div class="col-md-3">
+                        <img class="pngwing-com-4" width="100%" src="`+ baseUrl + item.image + `" />
+                    </div>
+                `;
+            });
+
+            $("#clientList").html(clientView);
         })
         .catch(error => {
             console.error('Error:', error.message);
