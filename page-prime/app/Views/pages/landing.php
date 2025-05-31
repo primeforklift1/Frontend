@@ -18,8 +18,10 @@
     <div id="tentang-kami-single">
     </div>
     <div style="margin-top:60px;">
-        <div class="rectangle-7"></div>
-        <img class="pngwing-com-4" width="100%" src="<?= base_url() ?>img/image-3.png" />
+        <div class="rectangle-7">
+            <div class="row justify-content-center" id="merkList">
+            </div>
+        </div>
     </div>
 
     <div class="row" style="margin-top:60px;">
@@ -92,7 +94,11 @@
 
     <div style="text-align:center;margin-top:60px;">
         <span class="why">Client</span>
-        <img class="pngwing-com-4" width="100%" src="<?= base_url() ?>img/image-3.png" />
+        <div class="row justify-content-center" id="clientList">
+            <!-- <div class="col-md-3">
+                <img class="pngwing-com-4" width="100%" src="<?= base_url() ?>img/image-3.png" />
+            </div> -->
+         </div>
     </div>
 
 </div>

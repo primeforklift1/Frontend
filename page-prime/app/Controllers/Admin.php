@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use CodeIgniter\Log\Logger;
+
 class Admin extends BaseController
 {
     public function index(): string
@@ -69,38 +71,31 @@ class Admin extends BaseController
     {
         $request = service('request');
 
-        // Ambil path dan nama file dari request
-        $sourcePath = $request->getPost('sourcePath'); // contoh: /var/www/nodejs/uploads/file.png
-        $sourceDir = $request->getPost('sourceDir'); // contoh: /var/www/nodejs/uploads/file.png
-        $filename = basename($sourcePath); // ambil nama file saja
-        $targetDir = FCPATH . $sourceDir; // public/
+        // Logger('testing');
+        $sourceUrl = $request->getPost('sourceUrl');
+        $targetDir = FCPATH . $request->getPost('targetDir');
+        $filename = basename($sourceUrl);
         $targetPath = $targetDir . $filename;
 
-        // Cek dan buat folder jika belum ada
         if (!is_dir($targetDir)) {
             mkdir($targetDir, 0755, true);
         }
 
-        // Salin file
-        if (file_exists($sourcePath)) {
-            if (copy($sourcePath, $targetPath)) {
-                return $this->response->setJSON([
-                    'status' => true,
-                    'message' => 'File berhasil disalin',
-                    'url' => base_url($sourceDir . $filename),
-                    'path' => $targetPath
-                ]);
-            } else {
-                return $this->response->setJSON([
-                    'status' => false,
-                    'message' => 'Gagal menyalin file'
-                ]);
-            }
+        // Download file
+        $fileContent = @file_get_contents($sourceUrl);
+        if ($fileContent !== false) {
+            file_put_contents($targetPath, $fileContent);
+            return $this->response->setJSON([
+                'status' => true,
+                'message' => 'File berhasil didownload dan disimpan',
+                'url' => base_url($request->getPost('targetDir') . $filename),
+                'path' => $targetPath
+            ]);
         }
 
         return $this->response->setJSON([
-            'status' => false,
-            'message' => 'Source file tidak ditemukan'
-        ]);
+                'status' => false,
+                'message' => 'Gagal mengunduh file dari ' . $sourceUrl
+            ]);
     }
 }
