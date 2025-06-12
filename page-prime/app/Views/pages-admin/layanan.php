@@ -43,7 +43,6 @@
 <script>
     const token = localStorage.getItem("authToken");
     if (!token) {
-        alert("Session habis. Silakan login ulang.");
         window.location.href = "/login";
     }
     new DataTable('#example');
