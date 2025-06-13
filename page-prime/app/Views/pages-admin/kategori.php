@@ -29,10 +29,6 @@
 </div>
 </div>
 <script>
-    const token = localStorage.getItem("authToken");
-    if (!token) {
-        window.location.href = "/login";
-    }
     // get api categori all page
     fetch(apiURL + '/api/category/where', {
         method: 'POST',

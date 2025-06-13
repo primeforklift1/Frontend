@@ -29,10 +29,6 @@
 </div>
 </div>
 <script>
-    const token = localStorage.getItem("authToken");
-    if (!token) {
-        window.location.href = "/login";
-    }
     // get api merk all page
     fetch(apiURL + '/api/merk/where', {
             method: 'POST',

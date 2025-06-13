@@ -44,12 +44,6 @@
     </div>
 </div>
 <script>
-    const token = localStorage.getItem("authToken");
-    console.log(token);
-    if (!token) {
-        window.location.href = "/login";
-    }
-    
     const toolbarOptions = [
         [{
             'font': []

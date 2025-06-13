@@ -35,10 +35,6 @@
 </div>
 </div>
 <script>
-    const token = localStorage.getItem("authToken");
-    if (!token) {
-        window.location.href = "/login";
-    }
     // get api menu all page
     fetch(apiURL + '/api/menu/where-all', {
             method: 'POST',

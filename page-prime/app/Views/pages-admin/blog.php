@@ -45,11 +45,6 @@
 </div>
 </div>
 <script>
-    const token = localStorage.getItem("authToken");
-    if (!token) {
-        window.location.href = "/login";
-    }
-    
     new DataTable('#example');
 </script>
 
