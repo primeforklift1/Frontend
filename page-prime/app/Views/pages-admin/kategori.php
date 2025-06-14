@@ -47,7 +47,10 @@
                                     <td>`+(index+1)+`</td>
                                     <td>`+item.lang+`</td>
                                     <td>`+item.name+`</td>
-                                    <td>Edit | Hapus</td>
+                                    <td>
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#addData" onclick="setFormUpdate(`+item.id+`)">Edit</button>
+                                    <button class="btn btn-danger" onclick="if(confirm('Yakin ingin menghapus ini?')) hapus(` + item.id + `)">Hapus</button>
+                                    </td>
                                 </tr>`;
             });
 
@@ -76,7 +79,7 @@
         </div>
         `;
         form += `
-        <div">
+        <div>
             <a class="btn btn-secondary" id="translate">Translate</a>
         </div>
         `;
@@ -169,6 +172,126 @@
             }
         }
     });
+
+    function setFormUpdate(id){
+        $("#titleData").html("Edit Kategori");
+        let form = ``;
+        form += `
+        <input type="hidden" id="idData">
+        <div class="form-group">
+        <label for="lang">Bahasa</label>
+        <select class="form-control" id="lang">
+        </select>
+        </div>
+        `;
+        form += `
+        <div class="form-group">
+        <label for="name">Nama Kategori</label>
+        <input type="text" class="form-control" id="name" aria-describedby="name">
+        <span id="translated_data"></span>
+        </div>
+        `;
+        form += `
+        <div">
+            <a class="btn btn-secondary" id="translate">Translate</a>
+        </div>
+        `;
+        form += `
+        <div class="d-flex justify-content-end">
+            <a class="btn btn-success" id="simpan">Simpan</a>
+        </div>
+        `;
+
+        $("#formData").html(form);
+        // get api language
+        fetch(apiURL + '/api/language')
+            .then(response => response.json())
+            .then(data => {
+                let languageList = '';
+                $.each(data.data, function(index, item) {
+                    languageList += `<option value="`+item.sort_name+`">`+item.translate_id+'-'+item.name+`</option>`;
+                });
+    
+                $("#lang").html(languageList);
+                // get api category by id
+                fetch(apiURL + '/api/category/'+id)
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data);
+                        $("#idData").val(data.data.id);
+                        $("#lang").val(data.data.lang);
+                        $("#name").val(data.data.name);
+                    })
+                    .catch(error => {
+                        console.error('Error:', error.message);
+                    });
+            })
+            .catch(error => {
+                console.error('Error:', error.message);
+            });
+
+    }
+
+    document.addEventListener("click", function(e) {
+        if (e.target && e.target.id === "simpan") {
+
+            let translate_data = $("#translated_data").text()
+            let names = "";
+            if(translate_data == ""){
+                names = $("#name").val()
+            }else{
+                names = translate_data
+            }
+            let body = {
+                id:$("#idData").val(),
+                lang:$("#lang").val(),
+                parent_id:$("#parent_id").val(),
+                name:names
+            }
+            // put api category by id
+            fetch(apiURL + '/admin/category', {
+                method: 'PUT',
+                headers: {
+                    'Authorization': 'Bearer '+token,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(body)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Edit Data berhasil:', data);
+                alert('Berhasil Edit Data!');
+                window.location.href = "/admin/kategori";
+            })
+            .catch(error => {
+                console.error('Edit Data gagal:', error);
+                alert('Gagal Edit Data!');
+            });
+        }
+    });
+
+    function hapus(id){
+        console.log(id);
+        // delete api category by id
+        fetch(apiURL + '/admin/category/'+id, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': 'Bearer '+token,
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Hapus Data berhasil:', data);
+            alert('Berhasil Hapus Data!');
+            window.location.href = "/admin/kategori";
+        })
+        .catch(error => {
+            console.error('Hapus Data gagal:', error);
+            alert('Gagal Hapus Data!');
+        });
+    }
+
 
     
 </script>
