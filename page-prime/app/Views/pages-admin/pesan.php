@@ -4,35 +4,26 @@
 <div class="container">
     <h2>Pesan</h2>
     <div style="text-align: right;">
-        <button style="margin: 15px 0px 15px 0px;" class="btn btn-success">Tambah Pesan</button>
     </div>
     <table id="example" class="table table-striped table-bordered">
         <thead>
             <tr>
                 <th>No</th>
-                <th>Nama Pesan</th>
-                <td>Deskripsi</td>
+                <th>Bahasa</th>
+                <td>Negara</td>
+                <td>Nama</td>
+                <td>Email</td>
                 <th>Aksi</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>Unit Forklift</td>
-                <td>Deskripsi</td>
-                <td>Edit | Hapus</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Ban Forklift</td>
-                <td>Deskripsi</td>
-                <td>Edit | Hapus</td>
-            </tr>
+        <tbody id="dataPesan">
         <tfoot>
             <tr>
                 <th>No</th>
-                <th>Nama Pesan</th>
-                <th>Deskripsi</th>
+                <th>Bahasa</th>
+                <th>Negara</th>
+                <th>Nama</th>
+                <th>Email</th>
                 <th>Aksi</th>
             </tr>
         </tfoot>
@@ -41,12 +32,33 @@
 </div>
 </div>
 <script>
-    const token = localStorage.getItem("authToken");
-    if (!token) {
-        alert("Session habis. Silakan login ulang.");
-        window.location.href = "/login";
-    }
-    new DataTable('#example');
+    // get api info all page
+    fetch(apiURL + '/api/message', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            let messageList = '';
+            $.each(data.data, function(index, item) {
+                messageList += `<tr>
+                                    <td>` + (index + 1) + `</td>
+                                    <td>` + item.lang + `</td>
+                                    <td>` + item.country + `</td>
+                                    <td>` + item.name + `</td>
+                                    <td>` + item.email + `</td>
+                                    <td>View</td>
+                                </tr>`;
+            });
+
+            $("#dataPesan").html(messageList);
+            new DataTable('#example');
+        })
+        .catch(error => {
+            console.error('Error:', error.message);
+        });
 </script>
 
 <?= $this->endSection() ?>

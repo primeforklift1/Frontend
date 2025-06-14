@@ -21,6 +21,103 @@
 
         function setlanguages(lang){
         sessionStorage.setItem("language", lang);
+
+
+        function createPagination(totalPages, currentPage) {
+            const pagination = document.getElementById('pagination');
+            pagination.innerHTML = '';
+            
+            // Previous button
+            const prevLi = document.createElement('li');
+            prevLi.className = `page-item ${currentPage === 1 ? 'disabled' : ''}`;
+            prevLi.innerHTML = `<a class="page-link" href="#" data-page="${currentPage - 1}">Prev</a>`;
+            pagination.appendChild(prevLi);
+            
+            // Always show first page
+            if (currentPage > 3 && totalPages > 5) {
+                const firstLi = document.createElement('li');
+                firstLi.className = `page-item ${currentPage === 1 ? 'active' : ''}`;
+                firstLi.innerHTML = `<a class="page-link" href="#" data-page="1">1</a>`;
+                pagination.appendChild(firstLi);
+                
+                if (currentPage > 4 && totalPages > 6) {
+                    const dotsLi = document.createElement('li');
+                    dotsLi.className = 'page-item disabled';
+                    dotsLi.innerHTML = `<span class="page-link">...</span>`;
+                    pagination.appendChild(dotsLi);
+                }
+            }
+            
+            // Determine range of pages to show
+            let startPage, endPage;
+            if (totalPages <= 5) {
+                startPage = 1;
+                endPage = totalPages;
+            } else {
+                if (currentPage <= 3) {
+                    startPage = 1;
+                    endPage = 5;
+                } else if (currentPage + 2 >= totalPages) {
+                    startPage = totalPages - 4;
+                    endPage = totalPages;
+                } else {
+                    startPage = currentPage - 2;
+                    endPage = currentPage + 2;
+                }
+            }
+            
+            // Create page links
+            for (let i = startPage; i <= endPage; i++) {
+                const pageLi = document.createElement('li');
+                pageLi.className = `page-item ${currentPage === i ? 'active' : ''}`;
+                pageLi.innerHTML = `<a class="page-link" href="#" data-page="${i}">${i}</a>`;
+                pagination.appendChild(pageLi);
+            }
+            
+            // Show last page with dots if needed
+            if (currentPage < totalPages - 2 && totalPages > 5) {
+                if (currentPage < totalPages - 3 && totalPages > 6) {
+                    const dotsLi = document.createElement('li');
+                    dotsLi.className = 'page-item disabled';
+                    dotsLi.innerHTML = `<span class="page-link">...</span>`;
+                    pagination.appendChild(dotsLi);
+                }
+                
+                const lastLi = document.createElement('li');
+                lastLi.className = `page-item ${currentPage === totalPages ? 'active' : ''}`;
+                lastLi.innerHTML = `<a class="page-link" href="#" data-page="${totalPages}">${totalPages}</a>`;
+                pagination.appendChild(lastLi);
+            }
+            
+            // Next button
+            const nextLi = document.createElement('li');
+            nextLi.className = `page-item ${currentPage === totalPages ? 'disabled' : ''}`;
+            nextLi.innerHTML = `<a class="page-link" href="#" data-page="${currentPage + 1}">Next</a>`;
+            pagination.appendChild(nextLi);
+            
+            // Add click event listeners
+            document.querySelectorAll('#pagination a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const page = parseInt(this.getAttribute('data-page'));
+                    if (page >= 1 && page <= totalPages && page !== currentPage) {
+                        // Panggil fungsi untuk memuat data halaman baru
+                        loadPageData(page);
+                    }
+                });
+            });
+        }
+
+        // Contoh penggunaan:
+        // createPagination(10, 1); // Total 10 halaman, halaman aktif 1
+
+        // Fungsi untuk memuat data halaman (contoh)
+        function loadPageData(page) {
+            console.log('Memuat data untuk halaman:', page);
+            // Di sini Anda akan melakukan AJAX request atau apapun untuk memuat data
+            // Setelah data dimuat, update pagination:
+            createPagination(totalPages, page); // totalPages harus diketahui dari server
+        }
     }
     </script>
 </head>

@@ -31,7 +31,6 @@
     // const token = localStorage.getItem("authToken");
     // console.log(token);
     // if (!token) {
-    //     alert("Session habis. Silakan login ulang.");
     //     window.location.href = "/login"; // ganti dengan halaman login kamu
     //     return;
     // }

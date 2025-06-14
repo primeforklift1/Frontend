@@ -27,6 +27,13 @@
 
     <title>Prime Forklift</title>
     <script>
+        
+        const token = localStorage.getItem("authToken");
+        console.log(token);
+        if (!token) {
+            window.location.href = "/login";
+        }
+
         var Size = Quill.import('formats/size');
         Size.whitelist = ['10px', '12px', '16px', '18px', '24px', '32px'];
         Quill.register(Size, true);

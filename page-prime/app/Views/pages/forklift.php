@@ -19,8 +19,6 @@
                 </div>
                 <div class="col-md-2" style="text-align:right;margin-top:10px;">
                     <select class="form-control form-control-sm merk">
-                        <option>Forklift Toyota</option>
-                        <option>Forklift Niciyu</option>
                     </select>
                 </div>
             </div>
@@ -41,12 +39,7 @@
                     <div class="col-md-6"></div>
                     <div class="col-md-6">
                         <nav aria-label=" Page navigation example">
-                            <ul class="pagination pagination-sm justify-content-end">
-                                <li class="page-item"><a class="page-link" href="#">Prev</a></li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                            <ul class="pagination pagination-sm justify-content-end" id="pagination">
                             </ul>
                         </nav>
                     </div>

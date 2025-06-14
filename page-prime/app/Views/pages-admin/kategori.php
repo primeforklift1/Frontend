@@ -29,11 +29,6 @@
 </div>
 </div>
 <script>
-    const token = localStorage.getItem("authToken");
-    if (!token) {
-        alert("Session habis. Silakan login ulang.");
-        window.location.href = "/login";
-    }
     // get api categori all page
     fetch(apiURL + '/api/category/where', {
         method: 'POST',

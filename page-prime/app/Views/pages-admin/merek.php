@@ -29,11 +29,6 @@
 </div>
 </div>
 <script>
-    const token = localStorage.getItem("authToken");
-    if (!token) {
-        alert("Session habis. Silakan login ulang.");
-        window.location.href = "/login";
-    }
     // get api merk all page
     fetch(apiURL + '/api/merk/where', {
             method: 'POST',
