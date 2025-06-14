@@ -159,10 +159,10 @@ $(document).ready(function () {
 
                 } else {
                     menuList += `<li class="nav-item mx-3">
-                    <button type="button" class="btn btn-primary rounded-pill">`+ item.menu_name + `</button>
+                    <a href="`+ baseUrl + lang + '/' + item.link + `" class="btn btn-primary rounded-pill">`+ item.menu_name + `</a>
                 </li>`;
                     menuListWhite += `<li class="nav-item mx-3">
-                    <button type="button" class="btn btn-primary rounded-pill">`+ item.menu_name + `</button>
+                    <a href="`+ baseUrl + lang + '/' + item.link + `" class="btn btn-primary rounded-pill">`+ item.menu_name + `</a>
                 </li>`;
                 }
             });
@@ -185,7 +185,15 @@ $(document).ready(function () {
             $("#menuList").html(menuList);
             $("#menuListWhite").html(menuListWhite);
             // get api language
-            fetch(apiURL + '/api/language')
+            fetch(apiURL + '/api/language/where', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    status: 1,
+                })
+            })
                 .then(response => response.json())
                 .then(data => {
                     let languageList = '';
@@ -484,7 +492,7 @@ $(document).ready(function () {
 
 
     // get api blog
-    fetch(apiURL + '/api/blog/where', {
+    fetch(apiURL + '/api/blog/where?page=1&row_count=4', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
