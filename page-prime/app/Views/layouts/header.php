@@ -22,7 +22,7 @@
         function setlanguages(lang){
         sessionStorage.setItem("language", lang);
 
-
+        }
         function createPagination(totalPages, currentPage) {
             const pagination = document.getElementById('pagination');
             pagination.innerHTML = '';
@@ -118,7 +118,7 @@
             // Setelah data dimuat, update pagination:
             createPagination(totalPages, page); // totalPages harus diketahui dari server
         }
-    }
+    
     </script>
 </head>
 

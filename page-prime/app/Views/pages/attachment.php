@@ -19,34 +19,17 @@
                 </div>
                 <div class="col-md-2" style="text-align:right;margin-top:10px;">
                     <select class="form-control form-control-sm merk">
-                        <option>Forklift Toyota</option>
-                        <option>Forklift Niciyu</option>
                     </select>
                 </div>
             </div>
             <div>
-                <div class="row">
-                    <div style="cursor:pointer;" class="col-md-3" data-toggle="modal" data-target="#sparepartModal" onclick="setModal()">
-                        <div class="carding">
-                            <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
-                            </div>
-                            <div class="carding-title" style="text-align:center;">
-                                <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
-                            </div>
-                        </div>
-                    </div>
+                <div class="row" id="attachmentListPage">
                 </div>
                 <div class="row">
                     <div class="col-md-6"></div>
                     <div class="col-md-6">
                         <nav aria-label=" Page navigation example">
-                            <ul class="pagination pagination-sm justify-content-end">
-                                <li class="page-item"><a class="page-link" href="#">Prev</a></li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                            <ul class="pagination pagination-sm justify-content-end" id="pagination">
                             </ul>
                         </nav>
                     </div>
@@ -54,4 +37,104 @@
             </div>
         </div>
     </div>
-    <?= $this->endSection() ?>
+<script>
+    function loadData(page = 1, callback = null) {
+        let lang = sessionStorage.getItem("language") || 'id';
+
+        fetch(apiURL + '/api/product/where?page=' + page + '&row_count=24', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                lang: lang,
+                status: 1,
+                id_category:5
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            const totalData = data.totalData || 0;
+            totalPages = Math.ceil(totalData / 24);
+            currentPage = page;
+
+            console.log("Total Data:", totalData, "Total Pages:", totalPages);
+
+            let attachmentList = '';
+            let langUri = lang ? lang + '/' : '';
+            let attachmentUri = '';
+
+            $.each(data.data, function (index, item) {
+                if (lang === 'id') attachmentUri = baseUrl + langUri + 'attachment/' + item.id;
+                else if (lang === 'cn') attachmentUri = baseUrl + langUri + '依恋/' + item.id;
+                else if (lang === 'jp') attachmentUri = baseUrl + langUri + 'アタッチメント/' + item.id;
+                else attachmentUri = baseUrl + langUri + 'Anhang/' + item.id;
+
+                attachmentList += `
+                    <div style="cursor:pointer;" class="col-md-3" data-toggle="modal" data-target="#sparepartModal" onclick="setModal()">
+                        <div class="carding">
+                            <div class="carding-img">
+                                <img src="${baseUrl + item.image}" alt="...">
+                            </div>
+                            <div class="carding-title" style="text-align:center;">
+                                <h6><b>${item.name}</b></h6>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            $("#attachmentListPage").html(attachmentList);
+
+            // Setelah selesai, panggil callback jika ada
+            if (typeof callback === 'function') {
+                callback(totalPages, currentPage);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error.message);
+        });
+    }
+
+    function createPagination(totalPages, currentPage) {
+        const pagination = document.getElementById('pagination');
+        pagination.innerHTML = '';
+
+        const prevLi = document.createElement('li');
+        prevLi.className = `page-item ${currentPage === 1 ? 'disabled' : ''}`;
+        prevLi.innerHTML = `<a class="page-link" href="#" data-page="${currentPage - 1}">Prev</a>`;
+        pagination.appendChild(prevLi);
+
+        let startPage = Math.max(1, currentPage - 2);
+        let endPage = Math.min(totalPages, currentPage + 2);
+
+        if (totalPages <= 5) {
+            startPage = 1;
+            endPage = totalPages;
+        }
+
+        for (let i = startPage; i <= endPage; i++) {
+            const pageLi = document.createElement('li');
+            pageLi.className = `page-item ${i === currentPage ? 'active' : ''}`;
+            pageLi.innerHTML = `<a class="page-link" href="#" data-page="${i}">${i}</a>`;
+            pagination.appendChild(pageLi);
+        }
+
+        const nextLi = document.createElement('li');
+        nextLi.className = `page-item ${currentPage === totalPages ? 'disabled' : ''}`;
+        nextLi.innerHTML = `<a class="page-link" href="#" data-page="${currentPage + 1}">Next</a>`;
+        pagination.appendChild(nextLi);
+
+        document.querySelectorAll('#pagination a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const page = parseInt(this.getAttribute('data-page'));
+                if (page >= 1 && page <= totalPages && page !== currentPage) {
+                    loadData(page, createPagination);
+                }
+            });
+        });
+    }
+
+    // Jalankan pertama kali
+    loadData(1, createPagination);
+</script>
+<?= $this->endSection() ?>

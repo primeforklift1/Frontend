@@ -49,18 +49,18 @@
                                     <td>`+item.name+`</td>
                                     <td>
                                     <button class="btn btn-primary" data-toggle="modal" data-target="#addData" onclick="setFormUpdate(`+item.id+`)">Edit</button>
-                                    <button class="btn btn-danger" onclick="if(confirm('Yakin ingin menghapus ini?')) hapus(` + item.id + `)">Hapus</button>
                                     </td>
-                                </tr>`;
-            });
-
-            $("#datakategory").html(categoryList);
-            new DataTable('#example');
-    })
-    .catch(error => {
-            console.error('Error:', error.message);
-    });
-
+                                    </tr>`;
+                                });
+                                
+                                $("#datakategory").html(categoryList);
+                                new DataTable('#example');
+                            })
+                            .catch(error => {
+                                console.error('Error:', error.message);
+                            });
+                            
+                            // <button class="btn btn-danger" onclick="if(confirm('Yakin ingin menghapus ini?')) hapus(` + item.id + `)">Hapus</button>
     function setForm(){
         $("#titleData").html("Tambah Kategori");
         let form = ``;
