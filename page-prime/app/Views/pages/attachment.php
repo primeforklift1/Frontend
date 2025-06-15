@@ -63,10 +63,10 @@
             let attachmentUri = '';
 
             $.each(data.data, function (index, item) {
-                if (lang === 'id') attachmentUri = baseUrl + langUri + 'attachment/' + item.id;
-                else if (lang === 'cn') attachmentUri = baseUrl + langUri + '依恋/' + item.id;
-                else if (lang === 'jp') attachmentUri = baseUrl + langUri + 'アタッチメント/' + item.id;
-                else attachmentUri = baseUrl + langUri + 'Anhang/' + item.id;
+                if (lang === 'id'){ attachmentUri = baseUrl + langUri + 'attachment/' + item.id;
+                }else if (lang === 'cn'){ attachmentUri = baseUrl + langUri + '依恋/' + item.id;$(".judul-produk").html('依恋');
+                }else if (lang === 'jp'){ attachmentUri = baseUrl + langUri + 'アタッチメント/' + item.id;$(".judul-produk").html('アタッチメント');
+                }else{ attachmentUri = baseUrl + langUri + 'Anhang/' + item.id;$(".judul-produk").html('Anhang');}
 
                 attachmentList += `
                     <div style="cursor:pointer;" class="col-md-3" data-toggle="modal" data-target="#sparepartModal" onclick="setModal()">
