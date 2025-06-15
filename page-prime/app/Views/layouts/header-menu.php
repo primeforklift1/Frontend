@@ -20,9 +20,11 @@
         const apiURL = "<?php echo getenv('NODE_API_URL'); ?>";
 
         function setlanguages(lang){
-        sessionStorage.setItem("language", lang);
-    }
-
+            sessionStorage.setItem("language", lang);
+        }
+        function setModal(data){
+            console.log("receive id : ",data);
+        }
         //     function createPagination(totalPages, currentPage) {
         //     const pagination = document.getElementById('pagination');
         //     pagination.innerHTML = '';

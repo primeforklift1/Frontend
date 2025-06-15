@@ -637,22 +637,6 @@ $(document).ready(function () {
     });
 
 
-    // get api blog View
-    fetch(apiURL + '/api/blog/sample-aja', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-    .then(response => response.json())
-    .then(data => {
-            $("#titleArticle").text(data.data.title);
-            
-    })
-    .catch(error => {
-            console.error('Error:', error.message);
-    });
-
 
 
     // admin
