@@ -63,10 +63,10 @@
             let batteryUri = '';
 
             $.each(data.data, function (index, item) {
-                if (lang === 'id') batteryUri = baseUrl + langUri + 'battery/' + item.id;
-                else if (lang === 'cn') batteryUri = baseUrl + langUri + '电池/' + item.id;
-                else if (lang === 'jp') batteryUri = baseUrl + langUri + 'バッテリー/' + item.id;
-                else batteryUri = baseUrl + langUri + 'batterie/' + item.id;
+                if (lang === 'id'){ batteryUri = baseUrl + langUri + 'battery/' + item.id;
+                }else if (lang === 'cn'){ batteryUri = baseUrl + langUri + '电池/' + item.id;$(".judul-produk").html('电池');
+                }else if (lang === 'jp'){ batteryUri = baseUrl + langUri + 'バッテリー/' + item.id;$(".judul-produk").html('バッテリー');
+                }else{ batteryUri = baseUrl + langUri + 'batterie/' + item.id;$(".judul-produk").html('Batterie');}
 
                 batteryList += `
                     <div style="cursor:pointer;" class="col-md-3" data-toggle="modal" data-target="#sparepartModal" onclick="setModal()">
