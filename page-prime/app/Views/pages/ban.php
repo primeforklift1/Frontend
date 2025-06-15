@@ -63,10 +63,10 @@
             let banUri = '';
 
             $.each(data.data, function (index, item) {
-                if (lang === 'id') banUri = baseUrl + langUri + 'ban/' + item.id;
-                else if (lang === 'cn') banUri = baseUrl + langUri + '胎/' + item.id;
-                else if (lang === 'jp') banUri = baseUrl + langUri + '禁止/' + item.id;
-                else banUri = baseUrl + langUri + 'verbot/' + item.id;
+                if (lang === 'id') {banUri = baseUrl + langUri + 'ban/' + item.id;
+                }else if (lang === 'cn'){ banUri = baseUrl + langUri + '胎/' + item.id;$(".judul-produk").html('胎');
+                }else if (lang === 'jp'){ banUri = baseUrl + langUri + '禁止/' + item.id;$(".judul-produk").html('禁止');
+                }else {banUri = baseUrl + langUri + 'verbot/' + item.id;$(".judul-produk").html('Verbot');}
 
                 bantList += `
                     <div style="cursor:pointer;" class="col-md-3" data-toggle="modal" data-target="#sparepartModal" onclick="setModal()">

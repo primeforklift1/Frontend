@@ -64,10 +64,10 @@
             let forkliftUri = '';
 
             $.each(data.data, function (index, item) {
-                if (lang === 'id') forkliftUri = baseUrl + langUri + 'forklift/' + item.id;
-                else if (lang === 'cn') forkliftUri = baseUrl + langUri + '叉车/' + item.id;
-                else if (lang === 'jp') forkliftUri = baseUrl + langUri + 'フォークリフト/' + item.id;
-                else forkliftUri = baseUrl + langUri + 'gabelstapler/' + item.id;
+                if (lang === 'id') {forkliftUri = baseUrl + langUri + 'forklift/' + item.id;
+                }else if (lang === 'cn') {forkliftUri = baseUrl + langUri + '叉车/' + item.id;$(".judul-produk").html('叉车');
+                }else if (lang === 'jp') {forkliftUri = baseUrl + langUri + 'フォークリフト/' + item.id;$(".judul-produk").html('フォークリフト');
+                }else{forkliftUri = baseUrl + langUri + 'gabelstapler/' + item.id;$(".judul-produk").html('Gabelstapler');}
 
                 forkliftList += `
                     <div style="cursor:pointer;" class="col-md-3" data-toggle="modal" data-target="#produkModal" onclick="setModal()">
