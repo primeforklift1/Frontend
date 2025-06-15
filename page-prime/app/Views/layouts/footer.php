@@ -103,14 +103,14 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="carding-title" style="text-align:center;">
-                    <h4><b><span id="imgName">FORKLIFT TOYOTA 2,5 TON</span></b></h4>
+                    <h4><b><span id="imgName"></span></b></h4>
                 </div>
             </div>
             <div class="col-md-6"></div>
         </div>
         <div class="row">
             <div class="col-md-6 d-flex justify-content-center align-items-center" style="text-align: center;">
-                <img id="imgModal" width="60%;" src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
+                <img id="imgModal" width="60%;" src="" alt="...">
             </div>
             <div class="col-md-6">
                 <table class="table">
@@ -217,6 +217,19 @@
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat via WhatsApp" />
 </a>
 
+<!-- modal promosi -->
+
+<!-- Popup container -->
+<div id="promoPopup" class="popup" style="display: none;">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup()">×</span>
+    <h2>Promo Idul Adha</h2>
+      <p>Diskon spesial hanya hari ini!</p>
+    <img src="http://151.106.125.49:9000/img/about-img.PNG" alt="Promo" />
+  </div>
+</div>
+
+
 <style>
   #whatsapp-fab {
     position: fixed;
@@ -244,14 +257,79 @@
     height: 60%;
     object-fit: contain;
   }
+
+  .popup {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* ⬅️ ini bikin popup ke tengah */
+  background: rgba(0, 0, 0, 0.5); /* buat modal gelap */
+}
+
+.popup.show {
+  display: flex;
+}
+
+.popup-content {
+  position: relative;
+  background: white;
+  padding: 0;
+  border-radius: 8px;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+  max-width: 100%;
+  width: 500px;
+}
+
+.popup-content img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  z-index: 10;
+}
 </style>
 </body>
 
 </html>
+
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
     crossorigin="anonymous"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+  const popup = document.getElementById('promoPopup');
+  
+  // Tanggal tampil: 10 - 20 Juni 2025
+  const startDate = new Date('2025-06-10');
+  const endDate = new Date('2025-06-20');
+  const today = new Date();
+
+  if (today >= startDate && today <= endDate) {
+    popup.style.display = 'flex';
+    setTimeout(() => {
+      popup.classList.add('show');
+    }, 100);
+  }
+});
+
+function closePopup() {
+  const popup = document.getElementById('promoPopup');
+  popup.classList.remove('show');
+  setTimeout(() => {
+    popup.style.display = 'none';
+  }, 500);
+}
+</script>
 <script src="<?= base_url()?>js/interactif.js"></script>
