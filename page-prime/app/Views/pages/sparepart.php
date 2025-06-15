@@ -63,10 +63,10 @@
             let sparepartUri = '';
 
             $.each(data.data, function (index, item) {
-                if (lang === 'id') sparepartUri = baseUrl + langUri + 'sparepart/' + item.id;
-                else if (lang === 'cn') sparepartUri = baseUrl + langUri + '备件/' + item.id;
-                else if (lang === 'jp') sparepartUri = baseUrl + langUri + 'スペアパーツ/' + item.id;
-                else sparepartUri = baseUrl + langUri + 'ersatzteile/' + item.id;
+                if (lang === 'id') {sparepartUri = baseUrl + langUri + 'sparepart/' + item.id;
+                }else if (lang === 'cn'){ sparepartUri = baseUrl + langUri + '备件/' + item.id;$(".judul-produk").html('备件');
+                }else if (lang === 'jp'){ sparepartUri = baseUrl + langUri + 'スペアパーツ/' + item.id;$(".judul-produk").html('スペアパーツ');
+                }else {sparepartUri = baseUrl + langUri + 'ersatzteile/' + item.id;$(".judul-produk").html('Ersatzteile');}
 
                 sparepartList += `
                     <div style="cursor:pointer;" class="col-md-3" data-toggle="modal" data-target="#sparepartModal" onclick="setModal()">
