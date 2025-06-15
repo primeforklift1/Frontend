@@ -375,13 +375,18 @@ $(document).ready(function () {
                                                 </div>`;
                     }
                 } else if (item.config_type == "soc") {
-                    socList += `<img style="margin-right:2px;" src="` + baseUrl + item.image + `" alt="">`;
+                    socList += `<a href="` + item.config_name + `"><img style="margin-right:2px;" src="` + baseUrl + item.image + `" alt=""></a>`;
 
                 } else if (item.config_type == "market") {
-                    marketList += `<img class="image-7" width="60" src="` + baseUrl + item.image + `" />`;
+                    marketList += `<a href="` + item.config_name + `"><img class="image-7" width="60" src="` + baseUrl + item.image + `" /></a>`;
 
                 } else if (item.config_type == "contact") {
                     contactList += `<div style="margin-top:10px;" class="text-wrapper-33"><img src="` + baseUrl + item.image + `" alt="" width="15">` + item.config_value + `</div>`;
+                    if(item.config_name == 'wa'){
+
+                        // $("#whatsapp-fab").attr("href",'https://wa.me/'+ item.config_value);
+                        $("#whatsapp-fab").attr("href",'https://wa.me/082210812989');
+                    }
                 } else {
                     let separatedTemp = item.config_name;
                     let count = separatedTemp.split(':');

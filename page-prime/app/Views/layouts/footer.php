@@ -213,7 +213,7 @@
 </div>
 
 <!-- modal modal -->
-<a href="https://wa.me/6281234567890" target="_blank" id="whatsapp-fab">
+<a href="" target="_blank" id="whatsapp-fab">
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat via WhatsApp" />
 </a>
 
