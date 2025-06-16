@@ -22,7 +22,51 @@
         function setlanguages(lang){
             sessionStorage.setItem("language", lang);
         }
-        function setModal(data){
+        function setModal(slug){
+
+            let lang = sessionStorage.getItem("language") || 'id';
+                // get api blog View
+            fetch(apiURL + '/api/product/'+slug, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                    $("#imgName").text(data.data.name);
+                    $("#imgModal").attr("src",baseUrl+data.data.image);
+                    let produktUri = '';
+                    
+                    if (lang === 'id') {produktUri = baseUrl + lang + '/produk/' + data.data.slug;
+                    }else if (lang === 'cn') {produktUri = baseUrl + lang + '/产品/' + data.data.slug;
+                    }else if (lang === 'jp') {produktUri = baseUrl + lang + '/製品/' + data.data.slug;
+                    }else{produktUri = baseUrl + lang + '/produkt/' + data.data.slug;}
+                    
+                    $("#linkVisit").attr("href",produktUri);
+                    let html = ``;
+                    let dataSpec = data.data.spec.split(';');
+                    for(let i=0;i<dataSpec.length;i++){
+                        html += `<tr>`;
+                        let item = dataSpec[i].split(':');
+                        for(let j=0;j<item.length;j++){
+                            if(j==0){
+                                html += `<td style="width:150px;">`+item[j]+`</td>`;
+                            }else{
+                                html += `<td>:`+item[j]+`</td>`;
+                            }
+                        }
+                        html += `</tr>`;
+                    }
+                    $("#dataTable").html(html)
+                    $("#detail").text(data.data.description)
+                    
+            })
+            .catch(error => {
+                    console.error('Error:', error.message);
+            });
+            
             console.log("receive id : ",data);
         }
         //     function createPagination(totalPages, currentPage) {

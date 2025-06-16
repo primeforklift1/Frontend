@@ -69,7 +69,7 @@
                 }else {sparepartUri = baseUrl + langUri + 'ersatzteile/' + item.id;$(".judul-produk").html('Ersatzteile');}
 
                 sparepartList += `
-                    <div style="cursor:pointer;" class="col-md-3" data-toggle="modal" data-target="#sparepartModal" onclick="setModal()">
+                    <div style="cursor:pointer;" class="col-md-3" data-toggle="modal" data-target="#produkModal" onclick="setModal('`+item.id+`')">
                         <div class="carding">
                             <div class="carding-img">
                                 <img src="${baseUrl + item.image}" alt="...">

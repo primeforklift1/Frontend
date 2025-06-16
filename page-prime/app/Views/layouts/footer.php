@@ -43,47 +43,24 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="carding-title" style="text-align:center;">
-                    <h4><b><span id="imgName">FORKLIFT TOYOTA 2,5 TON</span></b></h4>
+                    <h4><b><span id="imgName"></span></b></h4>
                 </div>
             </div>
             <div class="col-md-6"></div>
         </div>
         <div class="row">
             <div class="col-md-6 d-flex justify-content-center align-items-center" style="text-align: center;">
-                <img id="imgModal" width="60%;" src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
+                <img id="imgModal" width="60%;" src="" alt="...">
             </div>
             <div class="col-md-6">
                 <table class="table">
-                    <tr>
-                        <td>Model</td>
-                        <td id="modelData">-</td>
-                    </tr>
-                    <tr>
-                        <td>Kapasitas</td>
-                        <td id="kapasitasData">-</td>
-                    </tr>
-                    <tr>
-                        <td>Lifting Height</td>
-                        <td id="liftData">-</td>
-                    </tr>
-                    <tr>
-                        <td>Load Center</td>
-                        <td id="loadData">-</td>
-                    </tr>
-                    <tr>
-                        <td>Transmision</td>
-                        <td id="transmisionData">-</td>
-                    </tr>
-                    <tr>
-                        <td>Engine</td>
-                        <td id="engineData">-</td>
-                    </tr>
-                    <tr>
-                        <td>Type</td>
-                        <td id="typeData">-</td>
-                    </tr>
+                    <tbody id="dataTable"></tbody>
                 </table>
+                <!-- <span id="detail"></span> -->
             </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="text-align: center;"> <a id="linkVisit" href="">View More</a></div>
         </div>
       </div>
     </div>

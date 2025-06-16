@@ -50,7 +50,7 @@
                 html += `</tr>`;
             }
             $("#spec").append(html)
-            $("#detail").text(data.data.description)
+            $("#detail").html(data.data.description)
             
     })
     .catch(error => {
