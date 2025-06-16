@@ -56,6 +56,10 @@ class Home extends BaseController
     {
         return view('pages/blogView');
     }
+    public function produkView($id): string
+    {
+        return view('pages/produkView');
+    }
     public function setLanguage($id): string
     {
         return view('pages/landing');
