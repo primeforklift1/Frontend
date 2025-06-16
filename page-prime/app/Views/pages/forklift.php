@@ -69,8 +69,12 @@
                 }else if (lang === 'jp') {forkliftUri = baseUrl + langUri + 'フォークリフト/' + item.id;$(".judul-produk").html('フォークリフト');
                 }else{forkliftUri = baseUrl + langUri + 'gabelstapler/' + item.id;$(".judul-produk").html('Gabelstapler');}
 
+                let dataPopup = {
+                    name:"sample"
+                }
+
                 forkliftList += `
-                    <div style="cursor:pointer;" class="col-md-3" data-toggle="modal" data-target="#produkModal" onclick="setModal()">
+                    <div style="cursor:pointer;" class="col-md-3" data-toggle="modal" data-target="#produkModal" onclick="setModal('`+item.id+`')">
                         <div class="carding">
                             <div class="carding-img">
                                 <img src="${baseUrl + item.image}" alt="...">

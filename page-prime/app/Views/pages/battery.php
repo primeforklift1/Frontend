@@ -69,7 +69,7 @@
                 }else{ batteryUri = baseUrl + langUri + 'batterie/' + item.id;$(".judul-produk").html('Batterie');}
 
                 batteryList += `
-                    <div style="cursor:pointer;" class="col-md-3" data-toggle="modal" data-target="#sparepartModal" onclick="setModal()">
+                    <div style="cursor:pointer;" class="col-md-3" data-toggle="modal" data-target="#produkModal" onclick="setModal('`+item.id+`')">
                         <div class="carding">
                             <div class="carding-img">
                                 <img src="${baseUrl + item.image}" alt="...">
