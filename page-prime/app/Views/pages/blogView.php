@@ -7,7 +7,7 @@
         <div class="row koran-style">
             <div class="col-md-12">
                 <p>
-                <img width="500" id="imgBlog" src="" alt="Gambar Artikel"><span id="detail"></span>
+                <img style="width:500px;" id="imgBlog" src="" alt="Gambar Artikel"><span id="detail"></span>
                 </p>
             </div>
         </div>
