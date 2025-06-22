@@ -202,7 +202,7 @@
     <span class="close-btn" onclick="closePopup()">×</span>
     <h2>Promo Idul Adha</h2>
       <p>Diskon spesial hanya hari ini!</p>
-    <img src="http://151.106.125.49:9000/img/about-img.PNG" alt="Promo" />
+    <img src="https://test-prime.paylite.co.id/img/about-img.PNG" alt="Promo" />
   </div>
 </div>
 

@@ -16,7 +16,8 @@ class App extends BaseConfig
      *
      * E.g., http://example.com/
      */
-    public string $baseURL = 'http://151.106.125.49:9000/';
+   // public string $baseURL = 'http://151.106.125.49:9000/';
+      public string $baseURL = 'https://test-prime.paylite.co.id';
 
     /**
      * Allowed Hostnames in the Site URL other than the hostname in the baseURL.

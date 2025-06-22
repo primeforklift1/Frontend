@@ -42,7 +42,7 @@
     function loadData(page = 1, callback = null) {
         let lang = sessionStorage.getItem("language") || 'id';
 
-        fetch(apiURL + '/api/product/where?page=' + page + '&row_count=24', {
+        fetch(apiURL + '/api/product/where?page=' + page + '&row_count=4', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -54,7 +54,7 @@
         .then(response => response.json())
         .then(data => {
             const totalData = data.totalData || 0;
-            totalPages = Math.ceil(totalData / 24);
+            totalPages = Math.ceil(totalData / 4);
             currentPage = page;
 
             console.log("Total Data:", totalData, "Total Pages:", totalPages);
