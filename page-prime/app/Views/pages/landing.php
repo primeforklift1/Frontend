@@ -59,4 +59,76 @@
     </div>
 
 </div>
+
+<!-- modal promosi -->
+
+<!-- Popup container -->
+<div id="promoPopup" class="popup" style="display: none;">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup()">×</span>
+    <h4 id="promoTitle"></h4>
+      <!-- <p>Diskon spesial hanya hari ini!</p> -->
+    <img id="promoImage" src="" alt="Promo" />
+  </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    let lang = sessionStorage.getItem("language") || 'id';
+        console.log("get promo", lang);
+        fetch(apiURL + '/api/promosi/where?&page=1&row_count=1', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                lang: lang,
+                status: 1,
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            const promos = data.data || [];
+
+            if (promos.length > 0) {
+                const promo = promos[0];
+
+                const today = new Date();
+                today.setHours(0, 0, 0, 0); // Buat pastiin tanpa jam
+
+                const start = new Date(promo.start_date);
+                const end = new Date(promo.end_date);
+                start.setHours(0, 0, 0, 0);
+                end.setHours(0, 0, 0, 0);
+
+                if (today >= start && today <= end) {
+                // console.log('Tampilkan promo:', promo.title);
+
+                // Contoh tampilkan popup
+                document.getElementById('promoTitle').textContent = promo.title;
+                document.getElementById('promoImage').src = promo.image;
+                const popup = document.getElementById('promoPopup');
+                popup.style.display = 'flex';
+                setTimeout(() => popup.classList.add('show'), 100);
+                } else {
+                console.log('Promo belum aktif atau sudah lewat.');
+                }
+            } else {
+                console.log('Tidak ada promo.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error.message);
+        });
+
+
+
+    });
+
+function closePopup() {
+  const popup = document.getElementById('promoPopup');
+  popup.classList.remove('show');
+  setTimeout(() => {
+    popup.style.display = 'none';
+  }, 500);
+}
+</script>
 <?= $this->endSection() ?>
