@@ -249,8 +249,9 @@
 }
 
 .popup-content img {
-  width: 100%;
+  /* width: 100%; */
   border-radius: 8px;
+  height:300px;
 }
 
 .close-btn {
