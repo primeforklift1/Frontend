@@ -636,6 +636,37 @@ $(document).ready(function () {
             console.error('Error:', error.message);
     });
 
+    $("#messageclick").click(function(){
+        let lang = sessionStorage.getItem("language") || 'id';
+        let body = {
+                    lang: lang,
+                    country: $("#messageNegara").val(),
+                    name: $("#messageName").val(),
+                    email: $("#messageEmail").val(),
+                    telp: $("#messageTelp").val(),
+                    address: $("#messageAddress").val(),
+                    message: $("#messageDesc").val(),
+                    status: 1
+                }
+        fetch(apiURL + '/admin/message', {
+            method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            body: JSON.stringify(body)
+        })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Kirim Pesan berhasil:', data);
+                    alert('Berhasil Mengirim Pesan!');
+                    window.location.href = lang+"/layanan";
+            })
+        .catch(error => {
+                    console.error('Kirim Pesan Gagal:', error);
+            alert('Gagal Mengirim Pesan!');
+        });
+    });
+
 
 
 
