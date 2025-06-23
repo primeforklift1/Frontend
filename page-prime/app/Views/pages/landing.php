@@ -89,11 +89,13 @@
 .promo-carousel-container {
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
 .promo-carousel {
   display: flex;
   transition: transform 0.5s ease;
+  z-index: 1;
 }
 
 .promo-item {
@@ -218,8 +220,10 @@ function updateSlide() {
 }
 
 function closePopup() {
+  console.log("hiden");
   const popup = document.getElementById('promoPopup');
   popup.classList.remove('show');
+  popup.style.display = 'none'; 
 }
 
 setInterval(() => {
