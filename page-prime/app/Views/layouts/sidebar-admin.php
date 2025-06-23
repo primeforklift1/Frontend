@@ -27,5 +27,6 @@
     <a href="/admin/layanan">Layanan</a>
     <a href="/admin/blog">Blog</a>
     <a href="/admin/pesan">Pesan Masuk</a>
+    <a href="/admin/promosi">Promosi</a>
     <a href="/logout">Logout</a>
   </div>

@@ -60,75 +60,172 @@
 
 </div>
 
-<!-- modal promosi -->
+<style>
+.popup {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 9999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.6);
+}
+.popup.show {
+  display: flex;
+}
 
-<!-- Popup container -->
-<div id="promoPopup" class="popup" style="display: none;">
+.popup-content {
+  position: relative;
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+  max-width: 90vw;
+  width: 500px;
+  max-height: 90vh;
+  overflow: hidden;
+}
+
+.promo-carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.promo-carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.promo-item {
+  flex: 0 0 100%;
+  text-align: center;
+}
+
+.promo-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #f0f0f0;
+}
+
+.promo-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  color: #555;
+  cursor: pointer;
+  background: rgba(255,255,255,0.7);
+  border-radius: 50%;
+  padding: 5px 10px;
+  z-index: 5;
+}
+
+.promo-nav.left {
+  left: 5px;
+}
+.promo-nav.right {
+  right: 5px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  z-index: 10;
+}
+</style>
+
+<!-- Popup promo -->
+<div id="promoPopup" class="popup">
   <div class="popup-content">
     <span class="close-btn" onclick="closePopup()">×</span>
-    <h4 id="promoTitle"></h4>
-      <!-- <p>Diskon spesial hanya hari ini!</p> -->
-    <img id="promoImage" src="" alt="Promo" />
+    <div class="promo-carousel-container">
+      <div class="promo-nav left" onclick="slidePromo(-1)">‹</div>
+      <div class="promo-carousel" id="carouselPromo"></div>
+      <div class="promo-nav right" onclick="slidePromo(1)">›</div>
+    </div>
   </div>
 </div>
+
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-    let lang = sessionStorage.getItem("language") || 'id';
-        console.log("get promo", lang);
-        fetch(apiURL + '/api/promosi/where?&page=1&row_count=1', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                lang: lang,
-                status: 1,
-            })
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            const promos = data.data || [];
+let currentSlide = 0;
+let totalSlides = 0;
 
-            if (promos.length > 0) {
-                const promo = promos[0];
+document.addEventListener('DOMContentLoaded', () => {
+  const lang = sessionStorage.getItem("language") || 'id';
+  fetch(apiURL + '/api/promosi/where?page=1&row_count=10', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      lang: lang,
+      status: 1,
+    })
+  })
+  .then(response => response.json())
+  .then(data => {
+    const promos = data.data || [];
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
 
-                const today = new Date();
-                today.setHours(0, 0, 0, 0); // Buat pastiin tanpa jam
-
-                const start = new Date(promo.start_date);
-                const end = new Date(promo.end_date);
-                start.setHours(0, 0, 0, 0);
-                end.setHours(0, 0, 0, 0);
-
-                if (today >= start && today <= end) {
-                // console.log('Tampilkan promo:', promo.title);
-
-                // Contoh tampilkan popup
-                document.getElementById('promoTitle').textContent = promo.title;
-                document.getElementById('promoImage').src = promo.image;
-                const popup = document.getElementById('promoPopup');
-                popup.style.display = 'flex';
-                setTimeout(() => popup.classList.add('show'), 100);
-                } else {
-                console.log('Promo belum aktif atau sudah lewat.');
-                }
-            } else {
-                console.log('Tidak ada promo.');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error.message);
-        });
-
-
-
+    const activePromos = promos.filter(promo => {
+      const start = new Date(promo.start_date);
+      const end = new Date(promo.end_date);
+      start.setHours(0, 0, 0, 0);
+      end.setHours(0, 0, 0, 0);
+      return today >= start && today <= end;
     });
+
+    if (activePromos.length > 0) {
+      const container = document.getElementById('carouselPromo');
+      container.innerHTML = '';
+      totalSlides = activePromos.length;
+
+      activePromos.forEach(promo => {
+        const item = document.createElement('div');
+        item.className = 'promo-item';
+        item.innerHTML = `
+          <h4>${promo.title}</h4>
+          <img src="${baseUrl + promo.image}" alt="${promo.title}" />
+        `;
+        container.appendChild(item);
+      });
+
+      document.getElementById('promoPopup').classList.add('show');
+      updateSlide();
+    }
+  })
+  .catch(err => {
+    console.error('Promo fetch error:', err.message);
+  });
+});
+
+function slidePromo(direction) {
+  currentSlide += direction;
+  if (currentSlide < 0) currentSlide = totalSlides - 1;
+  if (currentSlide >= totalSlides) currentSlide = 0;
+  updateSlide();
+}
+
+function updateSlide() {
+  const container = document.querySelector('.promo-carousel');
+  const offset = -currentSlide * 100;
+  container.style.transform = `translateX(${offset}%)`;
+}
 
 function closePopup() {
   const popup = document.getElementById('promoPopup');
   popup.classList.remove('show');
-  setTimeout(() => {
-    popup.style.display = 'none';
-  }, 500);
 }
+
+setInterval(() => {
+  if (totalSlides > 1) slidePromo(1);
+}, 5000);
 </script>
+
+
 <?= $this->endSection() ?>
