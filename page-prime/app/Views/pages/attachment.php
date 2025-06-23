@@ -18,7 +18,7 @@
                     <div class="judul-produk">Attachment</div>
                 </div>
                 <div class="col-md-2" style="text-align:right;margin-top:10px;">
-                    <select class="form-control form-control-sm merk">
+                    <select class="form-control form-control-sm merk" id="id_merek">
                     </select>
                 </div>
             </div>
@@ -38,6 +38,25 @@
         </div>
     </div>
 <script>
+    let nameSearch = document.getElementById("search").value;
+    let merek = document.querySelector(".merk").value;
+    
+    document.getElementById("search").addEventListener("keyup", function(event) {
+        merek = document.querySelector(".merk").value;
+        nameSearch = this.value;
+        console.log("Ketik:", nameSearch);
+        console.log("merek:", merek);
+        loadData(1, createPagination);
+    });
+
+    document.getElementById("id_merek").addEventListener("change", function () {
+        merek = this.value;
+        nameSearch = document.getElementById("search").value;
+        console.log("Ganti merek:", merek);
+        console.log("Ketik (masih sama):", nameSearch);
+        loadData(1, createPagination);
+    });
+
     function loadData(page = 1, callback = null) {
         let lang = sessionStorage.getItem("language") || 'id';
 
@@ -47,7 +66,9 @@
             body: JSON.stringify({
                 lang: lang,
                 status: 1,
-                id_category:5
+                id_category:5,
+                id_merk:merek,
+                name:nameSearch
             })
         })
         .then(response => response.json())
