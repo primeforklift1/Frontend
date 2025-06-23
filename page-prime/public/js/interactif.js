@@ -270,10 +270,13 @@ $(document).ready(function () {
         .then(data => {
             let merkList = '';
             let merkListView = '';
+            merkList += `
+                    <option value="">All</option>
+                `;
             $.each(data.data, function (index, item) {
                 
                 merkList += `
-                    <option>`+item.nama+`</option>
+                    <option value="`+item.id+`">`+item.nama+`</option>
                 `;
                 merkListView += `
                     <div class="col-md-3">
