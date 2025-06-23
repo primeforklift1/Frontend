@@ -22,6 +22,7 @@ $routes->get('/admin/produk', 'Admin::produk');
 $routes->get('/admin/layanan', 'Admin::layanan');
 $routes->get('/admin/blog', 'Admin::blog');
 $routes->get('/admin/pesan', 'Admin::pesan');
+$routes->get('/admin/promosi', 'Admin::promosi');
 
 
 $routes->post('copy-node-file', 'Admin::copyFromNode');

@@ -98,4 +98,9 @@ class Admin extends BaseController
                 'message' => 'Gagal mengunduh file dari ' . $sourceUrl
             ]);
     }
+
+    public function promosi(): string
+    {
+        return view('pages-admin/promosi');
+    }
 }
