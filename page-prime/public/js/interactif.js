@@ -595,7 +595,7 @@ $(document).ready(function () {
                         
                     categoryList += `<div><div class="row">`;
                         $.each(data.data,function(index,item){
-                            console.log("item ",item);
+                            // console.log("item ",item);
                             categoryList += `<div style="cursor:pointer;" class="col-md-3" data-toggle="modal" data-target="#produkModal" onclick="setModal()">
                                                 <div class="carding">
                                                     <div class="carding-img">

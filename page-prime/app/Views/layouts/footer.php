@@ -194,18 +194,6 @@
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat via WhatsApp" />
 </a>
 
-<!-- modal promosi -->
-
-<!-- Popup container -->
-<div id="promoPopup" class="popup" style="display: none;">
-  <div class="popup-content">
-    <span class="close-btn" onclick="closePopup()">×</span>
-    <h2>Promo Idul Adha</h2>
-      <p>Diskon spesial hanya hari ini!</p>
-    <img src="https://test-prime.paylite.co.id/img/about-img.PNG" alt="Promo" />
-  </div>
-</div>
-
 
 <style>
   #whatsapp-fab {
@@ -257,6 +245,7 @@
   box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
   max-width: 100%;
   width: 500px;
+  text-align:center;
 }
 
 .popup-content img {
@@ -284,29 +273,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
     crossorigin="anonymous"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-  const popup = document.getElementById('promoPopup');
-  
-  // Tanggal tampil: 10 - 20 Juni 2025
-  const startDate = new Date('2025-06-10');
-  const endDate = new Date('2025-06-20');
-  const today = new Date();
 
-  if (today >= startDate && today <= endDate) {
-    popup.style.display = 'flex';
-    setTimeout(() => {
-      popup.classList.add('show');
-    }, 100);
-  }
-});
-
-function closePopup() {
-  const popup = document.getElementById('promoPopup');
-  popup.classList.remove('show');
-  setTimeout(() => {
-    popup.style.display = 'none';
-  }, 500);
-}
-</script>
 <script src="<?= base_url()?>js/interactif.js"></script>
