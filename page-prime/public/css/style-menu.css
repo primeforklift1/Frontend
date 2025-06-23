@@ -188,6 +188,12 @@
   border-radius: 20px;
   height: 200px;
 }
+.carding-img img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
 .carding-img:hover {
   padding: 20px;
   border: 1px solid #0073ff;
