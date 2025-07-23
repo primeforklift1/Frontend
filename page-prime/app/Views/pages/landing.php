@@ -199,6 +199,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       document.getElementById('promoPopup').classList.add('show');
       updateSlide();
+    }else{
+      closePopup()
     }
   })
   .catch(err => {
