@@ -380,10 +380,10 @@ $(document).ready(function () {
                                                 </div>`;
                     }
                 } else if (item.config_type == "soc") {
-                    socList += `<a href="` + item.config_name + `"><img style="margin-right:2px;" height="25px" src="` + baseUrl + item.image + `" alt=""></a>`;
+                    socList += `<a href="` + item.config_name + `"><img style="margin-right:2px;" height="35px" src="` + baseUrl + item.image + `" alt=""></a>`;
 
                 } else if (item.config_type == "market") {
-                    marketList += `<a href="` + item.config_name + `"><img class="image-7" height="25px" src="` + baseUrl + item.image + `" /></a>`;
+                    marketList += `<a href="` + item.config_name + `"><img class="image-7" height="35px" src="` + baseUrl + item.image + `" /></a>`;
 
                 } else if (item.config_type == "contact") {
                     contactList += `<div style="margin-top:10px;" class="text-wrapper-33"><img src="` + baseUrl + item.image + `" alt="" width="15">` + item.config_value + `</div>`;
