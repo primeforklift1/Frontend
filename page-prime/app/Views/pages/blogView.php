@@ -7,7 +7,7 @@
         <div class="row koran-style">
             <div class="col-md-12">
                 <p>
-                <img style="width:500px;" id="imgBlog" src="" alt="Gambar Artikel"><span id="detail"></span>
+                <img style="width:500px;" id="imgBlog" src="" alt="Gambar Artikel"><div id="detail"></div>
                 </p>
             </div>
         </div>
@@ -31,7 +31,7 @@
         console.log(data);
             $("#titleArticleView").text(data.data.title);
             $("#imgBlog").attr('src',baseUrl+data.data.image)
-            $("#detail").text(data.data.detail)
+            $("#detail").html(data.data.detail)
             
     })
     .catch(error => {
