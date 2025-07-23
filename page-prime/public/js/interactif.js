@@ -279,7 +279,7 @@ $(document).ready(function () {
                     <option value="`+item.id+`">`+item.nama+`</option>
                 `;
                 merkListView += `
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <img class="pngwing-com-4" width="100%" src="`+ baseUrl + item.image + `" />
                     </div>
                 `;
@@ -309,7 +309,7 @@ $(document).ready(function () {
             $.each(data.data, function (index, item) {
                 
                 clientView += `
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <img class="pngwing-com-4" width="100%" src="`+ baseUrl + item.image + `" />
                     </div>
                 `;
