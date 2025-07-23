@@ -52,8 +52,8 @@
                             <div class="card" style="height:100%;">
                                 <img src="${baseUrl + item.image}" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <p class="card-title"><strong>${item.title}</strong></p>
-                                    <p class="card-text">${limitedText(item.preface, item.title)}</p>
+                                    <p class="card-title" style="font-size:12px;"><strong>${item.title}</strong></p>
+                                    <p class="card-text" style="font-size:12px;">${limitedText(item.preface, item.title)}</p>
                                 </div>
                             </div>
                         </a>
