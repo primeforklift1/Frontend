@@ -108,7 +108,7 @@
                 `;
             });
 
-            // $("#forkliftListPage").html(forkliftList);
+            $("#forkliftListPage").html(forkliftList);
 
             // Setelah selesai, panggil callback jika ada
             if (typeof callback === 'function') {
