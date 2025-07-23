@@ -274,15 +274,17 @@ $(document).ready(function () {
                     <option value="">All</option>
                 `;
             $.each(data.data, function (index, item) {
-                
-                merkList += `
-                    <option value="`+item.id+`">`+item.nama+`</option>
-                `;
-                merkListView += `
-                    <div class="col-md-2">
-                        <img class="pngwing-com-4" width="100%" src="`+ baseUrl + item.image + `" />
-                    </div>
-                `;
+                if(item.nama != "no_merek"){
+
+                    merkList += `
+                        <option value="`+item.id+`">`+item.nama+`</option>
+                    `;
+                    merkListView += `
+                        <div class="col-md-2">
+                            <img class="pngwing-com-4" width="100%" src="`+ baseUrl + item.image + `" />
+                        </div>
+                    `;
+                }
             });
 
             $(".merk").html(merkList);
