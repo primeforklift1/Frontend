@@ -115,6 +115,20 @@
     width: auto;
   }
 }
+@media (max-width: 500px){
+  .close-btn {
+    background-color: red;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    position: absolute;
+    right: 0px;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 10;
+  }
+}
 
 .promo-nav {
   position: absolute;
@@ -142,11 +156,14 @@
 }
 
 .close-btn {
+  background-color: red;
+  width: 30px;
+  height: 30px;
+  text-align: center;
   position: absolute;
-  top: 5px;
   right: 10px;
-  font-size: 24px;
-  color: #333;
+  font-size: 18px;
+  color: #fff;
   cursor: pointer;
   z-index: 10;
 }
