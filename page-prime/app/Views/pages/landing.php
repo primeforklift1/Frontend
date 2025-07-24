@@ -102,7 +102,7 @@
 }
 
 .promo-item img {
-  width: 90vw;
+  width: 80vw;
   height: auto;
   object-fit: contain;
   border-radius: 8px;
