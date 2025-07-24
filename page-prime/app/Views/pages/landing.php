@@ -75,14 +75,12 @@
 }
 
 .popup-content {
+  max-width: 90vw;
   position: relative;
   background: white;
   padding: 10px;
   border-radius: 8px;
   box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
-  max-width: 90vw;
-  width: 500px;
-  max-height: 90vh;
   overflow: hidden;
 }
 
@@ -104,31 +102,43 @@
 }
 
 .promo-item img {
-  width: 100%;
-  height: 300px;
+  width: 90vw;
+  height: auto;
   object-fit: contain;
   border-radius: 8px;
   background: #f0f0f0;
+}
+
+@media (min-width: 500px) {
+  .promo-item img {
+    max-height: 90vh;
+    width: auto;
+  }
 }
 
 .promo-nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 30px;
+  font-size: 12px;
   color: #555;
   cursor: pointer;
   background: rgba(255,255,255,0.7);
   border-radius: 50%;
-  padding: 5px 10px;
+  padding: 5px 5px;
   z-index: 5;
+  text-align: center;
 }
 
 .promo-nav.left {
   left: 5px;
+  height: 30px;
+  width: 30px;
 }
 .promo-nav.right {
   right: 5px;
+  height: 30px;
+  width: 30px;
 }
 
 .close-btn {
@@ -146,7 +156,7 @@
 <div id="promoPopup" class="popup">
   <div class="popup-content">
     <span class="close-btn" onclick="closePopup()">×</span>
-    <div class="promo-carousel-container">
+    <div>
       <div class="promo-nav left" onclick="slidePromo(-1)">‹</div>
       <div class="promo-carousel" id="carouselPromo"></div>
       <div class="promo-nav right" onclick="slidePromo(1)">›</div>
@@ -191,8 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const item = document.createElement('div');
         item.className = 'promo-item';
         item.innerHTML = `
-          <h4>${promo.title}</h4>
-          <img src="${baseUrl + promo.image}" alt="${promo.title}" />
+          <img src="https://test-prime.paylite.co.id/uploads/8bfe9741d78ddf9b18d938fd730d1a3dd74fe725.png" alt="${promo.title}" />
         `;
         container.appendChild(item);
       });

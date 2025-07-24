@@ -222,47 +222,6 @@
     height: 60%;
     object-fit: contain;
   }
-
-  .popup {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  z-index: 9999;
-  display: flex;
-  justify-content: center;
-  align-items: center; /* ⬅️ ini bikin popup ke tengah */
-  background: rgba(0, 0, 0, 0.5); /* buat modal gelap */
-}
-
-.popup.show {
-  display: flex;
-}
-
-.popup-content {
-  position: relative;
-  background: white;
-  padding: 0;
-  border-radius: 8px;
-  box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
-  max-width: 100%;
-  width: 500px;
-  text-align:center;
-}
-
-.popup-content img {
-  /* width: 100%; */
-  border-radius: 8px;
-  height:300px;
-}
-
-.close-btn {
-  position: absolute;
-  top: 5px;
-  right: 10px;
-  font-size: 24px;
-  color: #333;
-  cursor: pointer;
-  z-index: 10;
-}
 </style>
 </body>
 
