@@ -428,6 +428,13 @@ $(document).ready(function () {
             console.error('Error:', error.message);
         });
     // get api Layanan
+    function isMeaningfulHTML(html) {
+        const tempDiv = document.createElement("div");
+        tempDiv.innerHTML = html || "";
+        const text = tempDiv.textContent.trim();
+
+        return text !== ""; // return true kalau isi beneran ada
+        }
     fetch(apiURL + '/api/service/where', {
         method: 'POST',
         headers: {
@@ -448,7 +455,7 @@ $(document).ready(function () {
             let landingRental = '';
             $.each(data.data, function (index, item) {
                 if (item.group == "rental") {
-                    if (item.preface != null || "") {
+                    if (isMeaningfulHTML(item.preface)) {
                         landingRental = `<div class="row" style="margin-top:60px;">
                                             <div class="col-md-4" style="text-align:center;margin-top:70px;">
                                                 <img class="rent" width="90%" src="`+ baseUrl + item.image + `" />
@@ -462,7 +469,7 @@ $(document).ready(function () {
                                         </div>`;
                     } else {
                         titleRental = item.title_name;
-                        rental += `<div style="cursor:pointer;" class="col-md-3" data-toggle="modal" data-target="#rentalModal" onclick="setModal()">
+                        rental += `<div style="cursor:pointer;" class="col-md-3" data-toggle="modal" data-target="#rentalModal" onclick="setModalLayanan(`+item.id+`,'Rental')">
                                         <div class="carding">
                                             <div class="carding-img">
                                                 <img src="`+ baseUrl + item.image + `" alt="...">
@@ -476,7 +483,7 @@ $(document).ready(function () {
 
                 } else {
                     titleService = item.title_name;
-                    service += `<div class="col-md-3 cards" data-toggle="modal" data-target="#serviceModal" onclick="setModal()" style="cursor:pointer;">
+                    service += `<div class="col-md-3 cards" data-toggle="modal" data-target="#serviceModal" onclick="setModalLayanan(`+item.id+`,'Service')" style="cursor:pointer;">
                                     <div class="carding">
                                         <div class="carding-img-ico">
                                             <img style="width:100px;" src="`+ baseUrl + item.image + `" alt="...">
