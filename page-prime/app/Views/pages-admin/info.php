@@ -124,7 +124,7 @@
         `;
         form += `
         <div class="form-group">
-        <label for="flag">Gambar</label>
+        <label for="flag">Gambar <span style="color:red;">(Max. Width : 35px, Height : 35px Recommended)</label>
         <input type="file" class="form-control" id="flag" aria-describedby="flag" name="flag">
         <label for="filedata">File Uploaded : </label>
         <span id="flag_image"></span>
@@ -353,7 +353,7 @@
         `;
         form += `
         <div class="form-group">
-        <label for="flag">Gambar</label>
+        <label for="flag">Gambar <span style="color:red;">(Max. Width : 35px, Height : 35px Recommended)</label>
         <input type="file" class="form-control" id="flag" aria-describedby="flag" name="flag">
         <label for="filedata">File Uploaded : </label>
         <span id="flag_image"></span>

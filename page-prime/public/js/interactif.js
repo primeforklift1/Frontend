@@ -274,15 +274,17 @@ $(document).ready(function () {
                     <option value="">All</option>
                 `;
             $.each(data.data, function (index, item) {
-                
-                merkList += `
-                    <option value="`+item.id+`">`+item.nama+`</option>
-                `;
-                merkListView += `
-                    <div class="col-md-3">
-                        <img class="pngwing-com-4" width="100%" src="`+ baseUrl + item.image + `" />
-                    </div>
-                `;
+                if(item.nama != "no_merek"){
+
+                    merkList += `
+                        <option value="`+item.id+`">`+item.nama+`</option>
+                    `;
+                    merkListView += `
+                        <div class="col-md-2">
+                            <img class="pngwing-com-4" width="100%" src="`+ baseUrl + item.image + `" />
+                        </div>
+                    `;
+                }
             });
 
             $(".merk").html(merkList);
@@ -309,7 +311,7 @@ $(document).ready(function () {
             $.each(data.data, function (index, item) {
                 
                 clientView += `
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <img class="pngwing-com-4" width="100%" src="`+ baseUrl + item.image + `" />
                     </div>
                 `;
@@ -378,10 +380,10 @@ $(document).ready(function () {
                                                 </div>`;
                     }
                 } else if (item.config_type == "soc") {
-                    socList += `<a href="` + item.config_name + `"><img style="margin-right:2px;" src="` + baseUrl + item.image + `" alt=""></a>`;
+                    socList += `<a href="` + item.config_name + `"><img style="margin-right:2px;" height="35px" src="` + baseUrl + item.image + `" alt=""></a>`;
 
                 } else if (item.config_type == "market") {
-                    marketList += `<a href="` + item.config_name + `"><img class="image-7" width="60" src="` + baseUrl + item.image + `" /></a>`;
+                    marketList += `<a href="` + item.config_name + `"><img class="image-7" height="35px" src="` + baseUrl + item.image + `" /></a>`;
 
                 } else if (item.config_type == "contact") {
                     contactList += `<div style="margin-top:10px;" class="text-wrapper-33"><img src="` + baseUrl + item.image + `" alt="" width="15">` + item.config_value + `</div>`;
@@ -426,6 +428,13 @@ $(document).ready(function () {
             console.error('Error:', error.message);
         });
     // get api Layanan
+    function isMeaningfulHTML(html) {
+        const tempDiv = document.createElement("div");
+        tempDiv.innerHTML = html || "";
+        const text = tempDiv.textContent.trim();
+
+        return text !== ""; // return true kalau isi beneran ada
+        }
     fetch(apiURL + '/api/service/where', {
         method: 'POST',
         headers: {
@@ -446,7 +455,7 @@ $(document).ready(function () {
             let landingRental = '';
             $.each(data.data, function (index, item) {
                 if (item.group == "rental") {
-                    if (item.preface != null || "") {
+                    if (isMeaningfulHTML(item.preface)) {
                         landingRental = `<div class="row" style="margin-top:60px;">
                                             <div class="col-md-4" style="text-align:center;margin-top:70px;">
                                                 <img class="rent" width="90%" src="`+ baseUrl + item.image + `" />
@@ -460,7 +469,7 @@ $(document).ready(function () {
                                         </div>`;
                     } else {
                         titleRental = item.title_name;
-                        rental += `<div style="cursor:pointer;" class="col-md-3" data-toggle="modal" data-target="#rentalModal" onclick="setModal()">
+                        rental += `<div style="cursor:pointer;" class="col-md-3" data-toggle="modal" data-target="#rentalModal" onclick="setModalLayanan(`+item.id+`,'Rental')">
                                         <div class="carding">
                                             <div class="carding-img">
                                                 <img src="`+ baseUrl + item.image + `" alt="...">
@@ -474,7 +483,7 @@ $(document).ready(function () {
 
                 } else {
                     titleService = item.title_name;
-                    service += `<div class="col-md-3 cards" data-toggle="modal" data-target="#serviceModal" onclick="setModal()" style="cursor:pointer;">
+                    service += `<div class="col-md-3 cards" data-toggle="modal" data-target="#serviceModal" onclick="setModalLayanan(`+item.id+`,'Service')" style="cursor:pointer;">
                                     <div class="carding">
                                         <div class="carding-img-ico">
                                             <img style="width:100px;" src="`+ baseUrl + item.image + `" alt="...">
@@ -500,7 +509,7 @@ $(document).ready(function () {
 
 
     // get api blog
-    fetch(apiURL + '/api/blog/where?page=1&row_count=4', {
+    fetch(apiURL + '/api/blog/where?page=1&row_count=6', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -535,13 +544,13 @@ $(document).ready(function () {
                     blogUri = baseUrl + langUri + 'blog/' + item.id;
                 }
                 blogList += `
-                    <div class="col-md-3 cards">
+                    <div class="col-md-2 cards">
                         <a href="`+ blogUri + `" class="sampleClick">
-                            <div class="card">
+                            <div class="card" style="height:100%;">
                                 <img src="`+ baseUrl + item.image + `" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title">`+ item.title + `</h5>
-                                    <p class="card-text">`+ item.preface + `</p>
+                                    <p class="card-title" style="font-size:12px;"><strong>${item.title}</strong></p>
+                                    <p class="card-text" style="font-size:12px;">${limitedText(item.preface, item.title)}</p>
                                 </div>
                             </div>
                         </a>
@@ -554,6 +563,30 @@ $(document).ready(function () {
         .catch(error => {
             console.error('Error:', error.message);
         });
+
+        function limitedText(htmlString, title, maxTotal = 100) {
+        const tempDivTitle = document.createElement("div");
+        tempDivTitle.innerHTML = title;
+        const plainTextTitle = tempDivTitle.textContent || tempDivTitle.innerText || "";
+
+        const tempDiv = document.createElement("div");
+        tempDiv.innerHTML = htmlString;
+        const plainTextPreface = tempDiv.textContent || tempDiv.innerText || "";
+
+        const remaining = maxTotal - plainTextTitle.length;
+
+        if (plainTextPreface.length <= remaining) return plainTextPreface;
+
+        // Potong berdasarkan kata
+        const words = plainTextPreface.split(" ");
+        let result = "";
+        for (let i = 0; i < words.length; i++) {
+            if ((result + words[i]).length > remaining) break;
+            result += (i > 0 ? " " : "") + words[i];
+        }
+
+        return result.trim() + "...";
+    }
 
     // get api product all page
     fetch(apiURL + '/api/category/where', {

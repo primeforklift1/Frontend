@@ -120,7 +120,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="carding-title" style="text-align:center;">
-                    <h4><b><span id="imgName">FORKLIFT TOYOTA 2,5 TON</span></b></h4>
+                    <h4><b><span id="imgNameRental"></span></b></h4>
                 </div>
             </div>
             <div class="col-md-6"></div>
@@ -130,35 +130,7 @@
                 <img id="imgModal" width="60%;" src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
             </div>
             <div class="col-md-6">
-                <table class="table">
-                    <tr>
-                        <td>Model</td>
-                        <td id="modelData">-</td>
-                    </tr>
-                    <tr>
-                        <td>Kapasitas</td>
-                        <td id="kapasitasData">-</td>
-                    </tr>
-                    <tr>
-                        <td>Lifting Height</td>
-                        <td id="liftData">-</td>
-                    </tr>
-                    <tr>
-                        <td>Daya Batterai</td>
-                        <td id="batteraiData">-</td>
-                    </tr>
-                    <tr>
-                        <td>Durasi Operasi</td>
-                        <td id="operationData">-</td>
-                    </tr>
-                    <tr>
-                        <td>Ukuran Fork</td>
-                        <td id="forkData">-</td>
-                    </tr>
-                    <tr>
-                        <td>Lama Rental</td>
-                        <td id="rentData">-</td>
-                    </tr>
+                <table class="table" id="dataTableRental">
                 </table>
             </div>
         </div>
@@ -179,9 +151,9 @@
         <div class="row" style="background-color: white;">
             <div class="col-md-12 cards" style="padding: 30px;">
                 <div class="carding-title">
-                    <h4><b><span id="imgName">Service Periodik</span></b></h4>
+                    <h4><b><span id="imgNameService"></span></b></h4>
                 </div>
-                <p id="descData">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi aliquam neque temporibus alias et inventore fuga repellendus ut quae a. Odit molestias earum esse dolores quas ab ullam, reprehenderit magni.</p>
+                <p id="descDataService"></p>
             </div>
         </div>
       </div>
@@ -222,47 +194,6 @@
     height: 60%;
     object-fit: contain;
   }
-
-  .popup {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  z-index: 9999;
-  display: flex;
-  justify-content: center;
-  align-items: center; /* ⬅️ ini bikin popup ke tengah */
-  background: rgba(0, 0, 0, 0.5); /* buat modal gelap */
-}
-
-.popup.show {
-  display: flex;
-}
-
-.popup-content {
-  position: relative;
-  background: white;
-  padding: 0;
-  border-radius: 8px;
-  box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
-  max-width: 100%;
-  width: 500px;
-  text-align:center;
-}
-
-.popup-content img {
-  /* width: 100%; */
-  border-radius: 8px;
-  height:300px;
-}
-
-.close-btn {
-  position: absolute;
-  top: 5px;
-  right: 10px;
-  font-size: 24px;
-  color: #333;
-  cursor: pointer;
-  z-index: 10;
-}
 </style>
 </body>
 

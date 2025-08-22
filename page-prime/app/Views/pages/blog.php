@@ -47,13 +47,13 @@
                 else blogUri = baseUrl + langUri + 'blog/' + item.id;
 
                 blogList += `
-                    <div class="col-md-3 cards">
+                    <div class="col-md-2 cards">
                         <a href="${blogUri}" class="sampleClick">
-                            <div class="card">
+                            <div class="card" style="height:100%;">
                                 <img src="${baseUrl + item.image}" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title">${item.title}</h5>
-                                    <p class="card-text">${item.preface}</p>
+                                    <p class="card-title" style="font-size:12px;"><strong>${item.title}</strong></p>
+                                    <p class="card-text" style="font-size:12px;">${limitedText(item.preface, item.title)}</p>
                                 </div>
                             </div>
                         </a>
@@ -72,6 +72,32 @@
             console.error('Error:', error.message);
         });
     }
+
+    function limitedText(htmlString, title, maxTotal = 100) {
+        const tempDivTitle = document.createElement("div");
+        tempDivTitle.innerHTML = title;
+        const plainTextTitle = tempDivTitle.textContent || tempDivTitle.innerText || "";
+
+        const tempDiv = document.createElement("div");
+        tempDiv.innerHTML = htmlString;
+        const plainTextPreface = tempDiv.textContent || tempDiv.innerText || "";
+
+        const remaining = maxTotal - plainTextTitle.length;
+
+        if (plainTextPreface.length <= remaining) return plainTextPreface;
+
+        // Potong berdasarkan kata
+        const words = plainTextPreface.split(" ");
+        let result = "";
+        for (let i = 0; i < words.length; i++) {
+            if ((result + words[i]).length > remaining) break;
+            result += (i > 0 ? " " : "") + words[i];
+        }
+
+        return result.trim() + "...";
+    }
+
+
 
     function createPagination(totalPages, currentPage) {
         const pagination = document.getElementById('pagination');

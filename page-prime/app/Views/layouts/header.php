@@ -118,6 +118,37 @@
             // Setelah data dimuat, update pagination:
             createPagination(totalPages, page); // totalPages harus diketahui dari server
         }
+
+        function setModalLayanan(id,poin){
+            fetch(apiURL + '/api/service/'+id, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                $("#imgName"+poin).text(data.data.name);
+                $("#descData"+poin).html(data.data.preface);
+
+                let html = ``;
+                    let dataSpec = data.data.detail.split(';');
+                    for(let i=0;i<dataSpec.length;i++){
+                        html += `<tr>`;
+                        let item = dataSpec[i].split(':');
+                        for(let j=0;j<item.length;j++){
+                            if(j==0){
+                                html += `<td style="width:150px;">`+item[j]+`</td>`;
+                            }else{
+                                html += `<td>:`+item[j]+`</td>`;
+                            }
+                        }
+                        html += `</tr>`;
+                    }
+                    $("#dataTable"+poin).html(html)
+            });
+        }
     
     </script>
 </head>
