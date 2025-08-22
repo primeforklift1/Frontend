@@ -53,7 +53,17 @@
   .box {
     width: 100% !important; /* jangan fix 400px */
   }
-  
+  .carousel-item {
+    min-height: 40vh; /* atur sesuai selera, misalnya 60–80% tinggi layar */
+  }
+
+  .carousel-item img {
+    height: 100%;
+    width:100%;
+    object-fit: cover; /* biar tetap proporsional, kepotong dikit tapi rapi */
+    object-position:center;
+  }
+
   .selamat-datang-di{
 
     margin-top: 150px;
