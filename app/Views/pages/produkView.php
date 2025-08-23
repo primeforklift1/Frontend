@@ -81,7 +81,7 @@
                     <a href="${blogUri}" class="sampleClick">
                         <div class="carding">
                             <div class="carding-img">
-                                <img src="${baseUrl + item.image}" alt="...">
+                                <img src="${baseUrl +"public/"+ item.image}" alt="...">
                             </div>
                             <div class="carding-title" style="text-align:center;">
                                 <h6><b>${item.name}</b></h6>

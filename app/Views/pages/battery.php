@@ -93,7 +93,7 @@
                     <div style="cursor:pointer;" class="col-md-3" data-toggle="modal" data-target="#produkModal" onclick="setModal('`+item.id+`')">
                         <div class="carding">
                             <div class="carding-img">
-                                <img src="${baseUrl + item.image}" alt="...">
+                                <img src="${baseUrl +"public/"+ item.image}" alt="...">
                             </div>
                             <div class="carding-title" style="text-align:center;">
                                 <h6><b>${item.name}</b></h6>

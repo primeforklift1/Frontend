@@ -28,7 +28,7 @@
                 <div style="cursor:pointer;" class="col-md-3" data-toggle="modal" data-target="#produkModal" onclick="setModal()">
                         <div class="carding">
                             <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
+                                <img src="<?= base_url() ?>public/img/JGBHGYHG-4.png" alt="...">
                             </div>
                             <div class="carding-title" style="text-align:center;">
                                 <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
@@ -64,7 +64,7 @@
                 <div style="cursor:pointer;" class="col-md-3" data-toggle="modal" data-target="#sparepartModal" onclick="setModal()">
                         <div class="carding">
                             <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
+                                <img src="<?= base_url() ?>public/img/JGBHGYHG-4.png" alt="...">
                             </div>
                             <div class="carding-title" style="text-align:center;">
                                 <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
@@ -106,7 +106,7 @@
                 <div style="cursor:pointer;" class="col-md-3" data-toggle="modal" data-target="#sparepartModal" onclick="setModal()">
                         <div class="carding">
                             <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
+                                <img src="<?= base_url() ?>public/img/JGBHGYHG-4.png" alt="...">
                             </div>
                             <div class="carding-title" style="text-align:center;">
                                 <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
@@ -148,7 +148,7 @@
                 <div style="cursor:pointer;" class="col-md-3" data-toggle="modal" data-target="#sparepartModal" onclick="setModal()">
                         <div class="carding">
                             <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
+                                <img src="<?= base_url() ?>public/img/JGBHGYHG-4.png" alt="...">
                             </div>
                             <div class="carding-title" style="text-align:center;">
                                 <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
@@ -190,7 +190,7 @@
                 <div style="cursor:pointer;" class="col-md-3" data-toggle="modal" data-target="#sparepartModal" onclick="setModal()">
                         <div class="carding">
                             <div class="carding-img">
-                                <img src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
+                                <img src="<?= base_url() ?>public/img/JGBHGYHG-4.png" alt="...">
                             </div>
                             <div class="carding-title" style="text-align:center;">
                                 <h6><b>FORKLIFT TOYOTA 2,5 TON</b></h6>
