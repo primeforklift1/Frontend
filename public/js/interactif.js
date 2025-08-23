@@ -199,7 +199,7 @@ $(document).ready(function () {
                     let languageList = '';
                     $.each(data.data, function (index, item) {
                         //     languageList += `<a onclick="setlanguages('id')" class="dropdown-item" href="<?= base_url()?>id/"><img src="<?= base_url()?>img/id.png" alt=""></a>`;
-                        languageList += `<a onclick="setlanguages('` + item.sort_name + `')" class="dropdown-item" href="` + baseUrl + item.sort_name + `/"><img src="` + baseUrl + item.flag_image + `" alt=""></a>`;
+                        languageList += `<a onclick="setlanguages('` + item.sort_name + `')" class="dropdown-item" href="` + baseUrl + item.sort_name + `/"><img src="` + baseUrl + "public/" + item.flag_image + `" alt=""></a>`;
                     });
 
                     $("#optionLang").html(languageList);
@@ -235,7 +235,7 @@ $(document).ready(function () {
                 sliderList += `
                     <div class="carousel-item position-relative `+ act + `">
                         <img class="d-block h-100"
-                            src="`+ baseUrl + item.image + `"
+                            src="`+ baseUrl + "public/" + item.image + `"
                             style="align-items: center;" />
                         <div class="dark-overlay position-absolute w-100 h-100"></div>
                         <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
@@ -281,7 +281,7 @@ $(document).ready(function () {
                     `;
                     merkListView += `
                         <div class="col-md-2">
-                            <img class="pngwing-com-4" width="100%" src="`+ baseUrl + item.image + `" />
+                            <img class="pngwing-com-4" width="100%" src="`+ baseUrl + "public/" + item.image + `" />
                         </div>
                     `;
                 }
@@ -312,7 +312,7 @@ $(document).ready(function () {
                 
                 clientView += `
                     <div class="col-md-2">
-                        <img class="pngwing-com-4" width="100%" src="`+ baseUrl + item.image + `" />
+                        <img class="pngwing-com-4" width="100%" src="`+ baseUrl + "public/" + item.image + `" />
                     </div>
                 `;
             });
@@ -353,7 +353,7 @@ $(document).ready(function () {
                                                         `+ item.config_value + `
                                                     </div>
                                                     <div class="col-md-6" style="text-align: center;">
-                                                        <img width="60%" src="`+ baseUrl + item.image + `" />
+                                                        <img width="60%" src="`+ baseUrl + "public/" + item.image + `" />
                                                     </div>
                                                 </div>`;
                         configList += `<div class="about">` + item.config_name + `</div>
@@ -362,7 +362,7 @@ $(document).ready(function () {
                                                         `+ item.config_value + `
                                                     </div>
                                                     <div class="col-md-6" style="text-align: center;">
-                                                        <img width="60%" src="`+ baseUrl + item.image + `" />
+                                                        <img width="60%" src="`+ baseUrl + "public/" + item.image + `" />
                                                     </div>
                                                 </div>`;
                     } else {
@@ -380,13 +380,13 @@ $(document).ready(function () {
                                                 </div>`;
                     }
                 } else if (item.config_type == "soc") {
-                    socList += `<a href="` + item.config_name + `"><img style="margin-right:2px;" height="35px" src="` + baseUrl + item.image + `" alt=""></a>`;
+                    socList += `<a href="` + item.config_name + `"><img style="margin-right:2px;" height="35px" src="` + baseUrl + "public/" + item.image + `" alt=""></a>`;
 
                 } else if (item.config_type == "market") {
-                    marketList += `<a href="` + item.config_name + `"><img class="image-7" height="35px" src="` + baseUrl + item.image + `" /></a>`;
+                    marketList += `<a href="` + item.config_name + `"><img class="image-7" height="35px" src="` + baseUrl + "public/" + item.image + `" /></a>`;
 
                 } else if (item.config_type == "contact") {
-                    contactList += `<div style="margin-top:10px;" class="text-wrapper-33"><img src="` + baseUrl + item.image + `" alt="" width="15">` + item.config_value + `</div>`;
+                    contactList += `<div style="margin-top:10px;" class="text-wrapper-33"><img src="` + baseUrl + "public/" + item.image + `" alt="" width="15">` + item.config_value + `</div>`;
                     if(item.config_name == 'wa'){
 
                         // $("#whatsapp-fab").attr("href",'https://wa.me/'+ item.config_value);
@@ -397,13 +397,13 @@ $(document).ready(function () {
                     let count = separatedTemp.split(':');
                     if (count.length < 2) {
                         whyTitle = item.config_value;
-                        whyImage = `<img width="80%" src="`+ baseUrl + item.image + `" />`;
+                        whyImage = `<img width="80%" src="`+ baseUrl + "public/" + item.image + `" />`;
                     } else {
 
                         whyList += `<div class="row">
                                         <div class="col-md-2">
                                             <div class="box-bg">
-                                                <img class="guarantee" src="`+ baseUrl + item.image + `" />
+                                                <img class="guarantee" src="`+ baseUrl + "public/" + item.image + `" />
                                             </div>
                                         </div>
                                         <div class="col-md-10">
@@ -458,7 +458,7 @@ $(document).ready(function () {
                     if (isMeaningfulHTML(item.preface)) {
                         landingRental = `<div class="row" style="margin-top:60px;">
                                             <div class="col-md-4" style="text-align:center;margin-top:70px;">
-                                                <img class="rent" width="90%" src="`+ baseUrl + item.image + `" />
+                                                <img class="rent" width="90%" src="`+ baseUrl+ "public/" + item.image + `" />
                                             </div>
                                             <div class="col-md-8">
                                                 <span class="why">`+ item.title_name + `</span>
@@ -472,7 +472,7 @@ $(document).ready(function () {
                         rental += `<div style="cursor:pointer;" class="col-md-3" data-toggle="modal" data-target="#rentalModal" onclick="setModalLayanan(`+item.id+`,'Rental')">
                                         <div class="carding">
                                             <div class="carding-img">
-                                                <img src="`+ baseUrl + item.image + `" alt="...">
+                                                <img src="`+ baseUrl+ "public/" + item.image + `" alt="...">
                                             </div>
                                             <div class="carding-title" style="text-align:center;">
                                                 <h6><b>`+ item.name + `</b></h6>
@@ -486,7 +486,7 @@ $(document).ready(function () {
                     service += `<div class="col-md-3 cards" data-toggle="modal" data-target="#serviceModal" onclick="setModalLayanan(`+item.id+`,'Service')" style="cursor:pointer;">
                                     <div class="carding">
                                         <div class="carding-img-ico">
-                                            <img style="width:100px;" src="`+ baseUrl + item.image + `" alt="...">
+                                            <img style="width:100px;" src="`+ baseUrl + "public/" + item.image + `" alt="...">
                                             <div class="carding-title" style="text-align:center;">
                                                 <h6><b>`+ item.name + `</b></h6>
                                             </div>
@@ -547,7 +547,7 @@ $(document).ready(function () {
                     <div class="col-md-2 cards">
                         <a href="`+ blogUri + `" class="sampleClick">
                             <div class="card" style="height:100%;">
-                                <img src="`+ baseUrl + item.image + `" class="card-img-top" alt="...">
+                                <img src="`+ baseUrl + "public/" + item.image + `" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <p class="card-title" style="font-size:12px;"><strong>${item.title}</strong></p>
                                     <p class="card-text" style="font-size:12px;">${limitedText(item.preface, item.title)}</p>
