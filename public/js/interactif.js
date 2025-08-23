@@ -380,17 +380,17 @@ $(document).ready(function () {
                                                 </div>`;
                     }
                 } else if (item.config_type == "soc") {
-                    socList += `<a href="` + item.config_name + `"><img style="margin-right:2px;" height="35px" src="` + baseUrl + "public/" + item.image + `" alt=""></a>`;
+                    socList += `<a href="` + item.config_name + `"><img style="margin-right:2px;" height="50px" src="` + baseUrl + "public/" + item.image + `" alt=""></a>`;
 
                 } else if (item.config_type == "market") {
-                    marketList += `<a href="` + item.config_name + `"><img class="image-7" height="35px" src="` + baseUrl + "public/" + item.image + `" /></a>`;
+                    marketList += `<a href="` + item.config_name + `"><img class="image-7" height="50px" src="` + baseUrl + "public/" + item.image + `" /></a>`;
 
                 } else if (item.config_type == "contact") {
                     contactList += `<div style="margin-top:10px;" class="text-wrapper-33"><img src="` + baseUrl + "public/" + item.image + `" alt="" width="15">` + item.config_value + `</div>`;
                     if(item.config_name == 'wa'){
 
                         // $("#whatsapp-fab").attr("href",'https://wa.me/'+ item.config_value);
-                        $("#whatsapp-fab").attr("href",'https://wa.me/082210812989');
+                        $("#whatsapp-fab").attr("href",'https://wa.me/6282210812989');
                     }
                 } else {
                     let separatedTemp = item.config_name;
