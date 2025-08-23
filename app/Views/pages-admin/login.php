@@ -10,7 +10,7 @@
     <link rel="icon" href="<?= base_url() ?>img/fav.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <link rel="stylesheet" href="<?= base_url() ?>css/style.css">
+    <link rel="stylesheet" href="<?= base_url() ?>public/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 
@@ -74,5 +74,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
     crossorigin="anonymous"></script>
-<script src="<?= base_url() ?>js/interactif.js"></script>
-<script src="<?= base_url() ?>js/auth.js"></script>
+<script src="<?= base_url() ?>public/js/interactif.js"></script>
+<script src="<?= base_url() ?>public/js/auth.js"></script>
