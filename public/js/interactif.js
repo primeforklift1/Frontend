@@ -391,6 +391,23 @@ $(document).ready(function () {
 
                         // $("#whatsapp-fab").attr("href",'https://wa.me/'+ item.config_value);
                         $("#whatsapp-fab").attr("href",'https://wa.me/6282210812989');
+                        var csList = [
+                            { name: "CS1", phone: "6282210812989" },
+                            { name: "CS2", phone: "6281510433868" },
+                            { name: "CS3", phone: "6281574452273" }
+                        ];
+                        
+                        if (typeof window.initWhatsAppFAB === 'function') {
+                            window.initWhatsAppFAB(csList);
+                        } else {
+                            const checkFunction = setInterval(() => {
+                                if (typeof window.initWhatsAppFAB === 'function') {
+                                    window.initWhatsAppFAB(csList);
+                                    clearInterval(checkFunction);
+                                }
+                            }, 100);
+                            setTimeout(() => clearInterval(checkFunction), 5000);
+                        }
                     }
                 } else {
                     let separatedTemp = item.config_name;

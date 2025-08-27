@@ -162,27 +162,39 @@
 </div>
 
 <!-- modal modal -->
-<a href="" target="_blank" id="whatsapp-fab">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat via WhatsApp" />
-</a>
+<div id="wa-fab-container">
+        <a href="#" id="whatsapp-fab">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat via WhatsApp" />
+        </a>
+        <div id="wa-options"></div>
+    </div>
+
 
 
 <style>
-  #whatsapp-fab {
+  #wa-fab-container {
     position: fixed;
     bottom: 20px;
     right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column-reverse; /* FAB di bawah */
+    align-items: flex-end;
+    gap: 10px;
+  }
+
+  #whatsapp-fab {
     width: 64px;
     height: 64px;
-    z-index: 9999;
     border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
     background-color: #25D366;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 0.2s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+    text-decoration: none;
   }
 
   #whatsapp-fab:hover {
@@ -194,16 +206,146 @@
     height: 60%;
     object-fit: contain;
   }
+
+  #wa-options {
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+  }
+
+  .wa-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Nama di kiri, icon di kanan */
+    background: #25D366;
+    color: white;
+    border-radius: 50px;
+    padding: 8px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    min-width: 180px;
+    max-width: 220px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    white-space: nowrap;
+    transition: transform 0.2s, background-color 0.2s;
+  }
+
+  .wa-option:hover {
+    background: #128C7E;
+    transform: translateX(-5px);
+    text-decoration: none;
+    color: white;
+  }
+
+  .wa-option span {
+    flex: 1;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 10px;
+    font-size: 14px;
+  }
+
+  .wa-option img {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+
+  /* Desktop hover */
+  @media (hover: hover) and (pointer: fine) {
+    #wa-fab-container:hover #wa-options {
+      display: flex;
+    }
+    #wa-fab-container:hover #whatsapp-fab {
+      display: none;
+    }
+  }
+
+  /* Mobile adjustments */
+  @media (max-width: 768px) {
+    .wa-option {
+      min-width: 160px;
+      max-width: 200px;
+      padding: 6px 12px;
+    }
+            
+    .wa-option span {
+      font-size: 13px;
+    }
+  }
+
+  /* Untuk nama yang sangat panjang */
+  .wa-option.long-name {
+    min-width: 200px;
+    max-width: 250px;
+  }
+
+  .wa-option.long-name span {
+    font-size: 12px;
+  }
 </style>
 </body>
 
 </html>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
+integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-    crossorigin="anonymous"></script>
+integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+crossorigin="anonymous"></script>
 
+<script>
+  const container = document.getElementById("wa-fab-container");
+  const fab = document.getElementById("whatsapp-fab");
+  const optionsDiv = document.getElementById("wa-options");
+  function initWhatsAppFAB(csList) {
+    optionsDiv.innerHTML = '';
+    csList.forEach(cs => {
+      const a = document.createElement("a");
+      a.href = "https://wa.me/" + cs.phone;
+      a.target = "_blank";
+      a.title = cs.name;
+      a.className = "wa-option";
+      if (cs.name.length > 15) {
+        a.classList.add("long-name");
+      }
+      a.innerHTML = `
+      <span>${cs.name}</span>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA Icon">
+      `;
+      
+      optionsDiv.appendChild(a);
+    });
+  }
+  
+  
+  fab.addEventListener("click", function (e) {
+    if (window.matchMedia("(hover: none)").matches) {
+      e.preventDefault(); // biar gak langsung ke WA
+      
+      const isShown = optionsDiv.style.display === "flex";
+      
+      if (isShown) {
+        optionsDiv.style.display = "none";
+        fab.style.display = "flex";   // tampilkan kembali FAB
+      } else {
+        optionsDiv.style.display = "flex";
+        fab.style.display = "none";   // sembunyikan FAB
+      }
+    }
+  });
+  document.addEventListener("click", function(e) {
+    if (window.matchMedia("(hover: none)").matches) {
+      if (!container.contains(e.target)) {
+        optionsDiv.style.display = "none";
+        fab.style.display = "flex";
+      }
+    }
+  });
+  
+  window.initWhatsAppFAB = initWhatsAppFAB;
+</script>
 <script src="<?= base_url()?>public/js/interactif.js"></script>
