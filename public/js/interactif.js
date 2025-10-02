@@ -386,7 +386,7 @@ $(document).ready(function () {
                     marketList += `<a href="` + item.config_name + `"><img class="image-7" height="50px" src="` + baseUrl + "public/" + item.image + `" /></a>`;
 
                 } else if (item.config_type == "contact") {
-                    contactList += `<div style="margin-top:10px;" class="text-wrapper-33"><img src="` + baseUrl + "public/" + item.image + `" alt="" width="15">` + item.config_value + `</div>`;
+                    contactList += `<div style="margin-top:10px; display: flex; align-items: center;" class="text-wrapper-33"><img src="` + baseUrl + "public/" + item.image + `" alt="" width="15"><p style="margin: 0 0 0 5px; line-height: 1;">` + item.config_value + `</p></div>`;
                     if(item.config_name == 'wa'){
 
                         // $("#whatsapp-fab").attr("href",'https://wa.me/'+ item.config_value);
