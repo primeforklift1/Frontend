@@ -21,9 +21,10 @@
                 <div class="group-13" id="contactData">
                 </div>
             </div>
-            <div class="col-sm-3">
-                <img class="image-9" width="100%" src="<?= base_url() ?>img/image-9.png" />
+            <div class="col-md-3 col-sm-3">
+              <div style="width: 100%;height: 200px;border-radius: 8px;overflow: hidden;" id="maps"></div>
             </div>
+
         </div>
     </div>
 </div>
@@ -290,6 +291,7 @@
 
 </html>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
 integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
 crossorigin="anonymous"></script>
@@ -347,5 +349,34 @@ crossorigin="anonymous"></script>
   });
   
   window.initWhatsAppFAB = initWhatsAppFAB;
+
+ (function() {
+  const lat = -6.367664016598244;
+  const lng = 107.37018414019217;
+
+  // Inisialisasi map ke #maps
+  const map = L.map('maps', {
+    center: [lat, lng],
+    zoom: 15,
+    dragging: false,
+    touchZoom: false,
+    scrollWheelZoom: false,
+    doubleClickZoom: false,
+    boxZoom: false,
+    zoomControl: false,
+    attributionControl: true
+  });
+
+  // Tile layer OSM
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  // Marker
+  const marker = L.marker([lat, lng]).addTo(map);
+  marker.bindPopup(`<b>PT. PRIME FORKLIFT SERVICE</b><br><a style="color:white;" class="btn btn-primary" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=-6.367664016598244,107.37018414019217
+"><i class="fa-solid fa-location-arrow"></i> Navigasi</a>`);
+})();
 </script>
 <script src="<?= base_url()?>public/js/interactif.js"></script>
