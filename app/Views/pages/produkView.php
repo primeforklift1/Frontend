@@ -34,7 +34,7 @@
     .then(data => {
         console.log(data);
             $("#titleProdukView").text(data.data.name);
-            $("#imgProduk").attr('src',baseUrl+data.data.image)
+            $("#imgProduk").attr('src',baseUrl+"public/"+data.data.image)
             let html = ``;
             let dataSpec = data.data.spec.split(';');
             for(let i=0;i<dataSpec.length;i++){

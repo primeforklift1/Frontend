@@ -30,7 +30,7 @@
     .then(data => {
         console.log(data);
             $("#titleArticleView").text(data.data.title);
-            $("#imgBlog").attr('src',baseUrl+data.data.image)
+            $("#imgBlog").attr('src',baseUrl+"public/"+data.data.image)
             $("#detail").html(data.data.detail)
             
     })
