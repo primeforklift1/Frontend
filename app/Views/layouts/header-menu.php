@@ -40,7 +40,7 @@
             .then(data => {
                 console.log(data);
                     $("#imgName").text(data.data.name);
-                    $("#imgModal").attr("src",baseUrl+data.data.image);
+                    $("#imgModal").attr("src",baseUrl+"public/"+data.data.image);
                     let produktUri = '';
                     
                     if (lang === 'id') {produktUri = baseUrl + lang + '/produk/' + data.data.slug;
