@@ -712,7 +712,6 @@ $(document).ready(function () {
                 .then(data => {
                     console.log('Kirim Pesan berhasil:', data);
                     alert('Berhasil Mengirim Pesan!');
-                    window.location.href = lang+"/layanan";
             })
         .catch(error => {
                     console.error('Kirim Pesan Gagal:', error);
