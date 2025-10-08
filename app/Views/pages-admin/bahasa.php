@@ -44,7 +44,7 @@
                                     <td>`+(index+1)+`</td>
                                     <td>`+item.sort_name+`</td>
                                     <td>`+item.name+`</td>
-                                    <td><img width="30" src="`+baseUrl+item.flag_image+`" alt=""></td>
+                                    <td><img width="30" src="`+baseUrl+'public/'+item.flag_image+`" alt=""></td>
                                     <td>`+(item.status == 1 ? 'Aktif' : 'Non Aktif')+`</td>
                                     <td>
                                     <button class="btn btn-primary" data-toggle="modal" data-target="#addData" onclick="setFormUpdate(`+item.id+`)">Edit</button>

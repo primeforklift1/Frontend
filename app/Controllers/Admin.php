@@ -75,7 +75,7 @@ class Admin extends BaseController
         $sourceUrl = $request->getPost('sourceUrl');
         $targetDir = FCPATH . $request->getPost('targetDir');
         $filename = basename($sourceUrl);
-        $targetPath = $targetDir . $filename;
+        $targetPath = 'public/'.$targetDir . $filename;
 
         if (!is_dir($targetDir)) {
             mkdir($targetDir, 0755, true);

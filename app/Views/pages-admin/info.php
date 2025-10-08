@@ -54,7 +54,7 @@
                                     <td>` + item.lang + `</td>
                                     <td>` + item.config_type + `</td>
                                     <td>` + item.config_name + `</td>
-                                    <td><img width="100" src="`+baseUrl+item.image+`" alt=""></td>
+                                    <td><img width="100" src="`+baseUrl+'public/'+item.image+`" alt=""></td>
                                     <td>`+(item.status == 1 ? 'Aktif' : 'Non Aktif')+`</td>
                                     <td>
                                     <button class="btn btn-primary" data-toggle="modal" data-target="#addData" onclick="setFormUpdate(`+item.config_id+`)">Edit</button>

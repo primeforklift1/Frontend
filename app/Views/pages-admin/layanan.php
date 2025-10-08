@@ -54,7 +54,7 @@
                 infoList += `<tr>
                                     <td>` + (index + 1) + `</td>
                                     <td>` + item.lang + `</td>
-                                    <td><img width="100" src="`+baseUrl+item.image+`" alt=""></td>
+                                    <td><img width="100" src="`+baseUrl+'public/'+item.image+`" alt=""></td>
                                     <td>` + item.title_name + `</td>
                                     <td>` + item.name + `</td>
                                     <td>` + item.preface + `</td>

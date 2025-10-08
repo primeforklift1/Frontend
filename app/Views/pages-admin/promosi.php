@@ -52,7 +52,7 @@
                 promosiList += `<tr>
                                     <td>` + (index + 1) + `</td>
                                     <td>` + item.title + `</td>
-                                    <td><img width="100" src="`+baseUrl+item.image+`" alt=""></td>
+                                    <td><img width="100" src="`+baseUrl+'public/'+item.image+`" alt=""></td>
                                     <td>` + item.start_date.substring(0,10) + `</td>
                                     <td>` + item.end_date.substring(0,10) + `</td>
                                     <td>`+(item.status == 1 ? 'Aktif' : 'Non Aktif')+`</td>

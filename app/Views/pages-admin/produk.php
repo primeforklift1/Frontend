@@ -56,7 +56,7 @@
                                     <td>` + item.lang + `</td>
                                     <td>` + item.slug + `</td>
                                     <td>` + item.name + `</td>
-                                    <td><img width="100" src="`+baseUrl+item.image+`" alt=""></td>
+                                    <td><img width="100" src="`+baseUrl+'public/'+item.image+`" alt=""></td>
                                     <td>` + item.spec + `</td>
                                     <td>`+(item.status == 1 ? 'Aktif' : 'Non Aktif')+`</td>
                                     <td>
