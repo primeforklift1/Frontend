@@ -394,7 +394,8 @@ $(document).ready(function () {
                         var csList = [
                             { name: "CS1", phone: "6282210812989" },
                             { name: "CS2", phone: "6281510433868" },
-                            { name: "CS3", phone: "6281574452273" }
+                            { name: "CS3", phone: "6281574452273" },
+                            { name: "CS4", phone: "6281510433875" }
                         ];
                         
                         if (typeof window.initWhatsAppFAB === 'function') {
