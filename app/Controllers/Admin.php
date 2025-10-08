@@ -73,7 +73,8 @@ class Admin extends BaseController
 
         // Logger('testing');
         $sourceUrl = $request->getPost('sourceUrl');
-        $targetDir = FCPATH . $request->getPost('targetDir');
+        // $targetDir = FCPATH . $request->getPost('targetDir'); // berjalan di spark
+        $targetDir = rtrim(ROOTPATH, '/') . '/public/' . ltrim($request->getPost('targetDir'), '/'); // untuk apache/ nginx
         $filename = basename($sourceUrl);
         $targetPath = $targetDir . $filename;
 
