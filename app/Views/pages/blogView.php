@@ -4,11 +4,21 @@
 <div class="isi-konten">
     <div class="about" id="titleArticleView"></div>
     <div class="row" style="margin-top:30px;">
-        <div class="row koran-style">
-            <div class="col-md-12">
-                <p>
-                <img style="width:500px;" id="imgBlog" src="" alt="Gambar Artikel"><div id="detail"></div>
-                </p>
+        <div class="row">
+            <div class="col-md-5">
+                <img style="width:500px;" id="imgBlog" src="" alt="Gambar Artikel">
+
+                <div style="padding:10px;margin-top:20px;">
+                    <div class="alert alert-primary" role="alert">
+                        Related Blog
+                    </div>
+                    <div id="contentLink"></div>
+
+
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div id="detail"></div>
             </div>
         </div>
     </div>
@@ -51,6 +61,7 @@
             let blogList = '';
             let langUri = lang ? lang + '/' : '';
             let blogUri = '';
+            let contentLink = '';
             $.each(data.data, function (index, item) {
                 if (lang === 'id') blogUri = baseUrl + langUri + 'blog/' + item.id;
                 else if (lang === 'cn') blogUri = baseUrl + langUri + '博客/' + item.id;
@@ -70,8 +81,13 @@
                         </a>
                     </div>
                 `;
-            });
 
+                contentLink += `<a href="${blogUri}" style="text-decoration:none;"><div class="alert alert-secondary" role="alert">
+                                ${item.title}
+                                </div></a>
+                                `;
+            });
+            $("#contentLink").html(contentLink);
             $("#blogListPageRelated").html(blogList);
         })
         .catch(error => {
