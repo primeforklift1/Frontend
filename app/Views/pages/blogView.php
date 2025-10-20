@@ -6,9 +6,9 @@
     <div class="row" style="margin-top:30px;">
         <div class="row">
             <div class="col-md-5">
-                <img style="width:500px;" id="imgBlog" src="" alt="Gambar Artikel">
+                <img style="width:100%" id="imgBlog" src="" alt="Gambar Artikel">
 
-                <div style="padding:10px;margin-top:20px;">
+                <div id="links" style="padding:10px;margin-top:20px;">
                     <div class="alert alert-primary" role="alert">
                         Related Blog
                     </div>
@@ -117,6 +117,15 @@
 
             return result.trim() + "...";
         }
+
+        window.addEventListener('DOMContentLoaded', function () {
+            var relatedBlogDiv = $("#links");
+            if (window.innerWidth < 768) {
+                relatedBlogDiv.hide();   // jQuery way to hide
+            } else {
+                relatedBlogDiv.show();   // jQuery way to show
+            }
+        });
 </script>
 <style>
     <style>
