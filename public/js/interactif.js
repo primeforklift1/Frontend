@@ -237,7 +237,7 @@ $(document).ready(function () {
                         <img class="d-block h-100"
                             src="`+ baseUrl + "public/" + item.image + `"
                             style="align-items: center;" />
-                        <div class="dark-overlay position-absolute w-100 h-100"></div>
+                        <div class="position-absolute w-100 h-100"></div>
                         <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
                             <p class="selamat-datang-di text-white">
                             `+ item.title + `

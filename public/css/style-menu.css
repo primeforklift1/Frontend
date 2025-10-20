@@ -28,13 +28,6 @@
   line-height: 18.3px;
 }
 
-.dark-overlay {
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* ubah 0.5 jadi lebih besar untuk lebih gelap */
-  z-index: 1;
-}
-
 .carousel-caption {
   z-index: 2; /* pastikan teks di atas overlay */
 }
