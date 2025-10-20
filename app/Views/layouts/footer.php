@@ -128,7 +128,7 @@
         </div>
         <div class="row">
             <div class="col-md-6 d-flex justify-content-center align-items-center" style="text-align: center;">
-                <img id="imgModal" width="60%;" src="<?= base_url() ?>img/JGBHGYHG-4.png" alt="...">
+                <img id="imgModalRental" width="60%;" alt="...">
             </div>
             <div class="col-md-6">
                 <table class="table" id="dataTableRental">

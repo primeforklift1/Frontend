@@ -133,6 +133,7 @@
             .then(data => {
                 console.log(data);
                 $("#imgName"+poin).text(data.data.name);
+                $("#imgModalRental").attr("src",baseUrl+"public/"+data.data.image);
                 $("#descData"+poin).html(data.data.preface);
 
                 let html = ``;
