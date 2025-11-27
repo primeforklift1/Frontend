@@ -12,13 +12,13 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 WORKDIR /var/www
 
 # Copy project files
-COPY /page-prime .
+# COPY /page-prime .
 
 # Set permissions
-RUN chmod -R 777 writable
+# RUN chmod -R 777 writables
 
 # Install PHP dependencies
-RUN composer install
+# RUN composer install
 
 # Expose port
 EXPOSE 8080

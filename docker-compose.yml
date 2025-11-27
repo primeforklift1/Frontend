@@ -6,5 +6,5 @@ services:
     ports:
       - "9000:8080"
     volumes:
-      - ./page-prime:/var/www
+      - ./:/var/www
     working_dir: /var/www

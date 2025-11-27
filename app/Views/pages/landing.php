@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const item = document.createElement('div');
         item.className = 'promo-item';
         item.innerHTML = `
-          <img src="https://test-prime.paylite.co.id/uploads/8bfe9741d78ddf9b18d938fd730d1a3dd74fe725.png" alt="${promo.title}" />
+          <img src="https://primeforklift.co.id/public/${promo.image}" alt="${promo.title}" />
         `;
         container.appendChild(item);
       });
